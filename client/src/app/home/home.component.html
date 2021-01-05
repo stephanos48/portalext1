@@ -1,10 +1,33 @@
 <div class="container mt-5">
     <div *ngIf="!registerMode" style="text-align: center">
-        <h1>Find your match</h1>
-        <p class="lead">Come on in to view your matches... all you need to do is sign up!</p>
-        <div class="text-center">
+        <div class="row">
+            <div class="col-11 text-left">
+                <h1>Michelle Ling Shen Portal</h1>
+            </div> 
+        </div>
+        <img [src]="carimage" alt="image">
+        <br>
+        <div style="text-align: center">
+          <h1>Connecting our plants to our customers worldwide</h1>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Customer First Mindset</h2>
+                <p>We strive daily to service our customers better.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Data Driven Decisions</h2>
+                <p>Good information leads to good decisions. The decisions we make are always data driven.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Global Communication</h2>
+                <p>This site allows our companies to communicate, real-time, worldwide.</p>
+            </div>
+        </div>
+        <br>
+        <div>
             <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2">Register</button>
-            <button class="btn btn-info btn-lg">Learn more</button>
         </div>
     </div>
     <div *ngIf="registerMode" class="container">
