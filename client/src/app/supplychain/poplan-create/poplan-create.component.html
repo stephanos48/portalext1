@@ -3,8 +3,6 @@
   <h2 class="text-center text-primary"> Create a new Part Number</h2>
   <hr>
 
-  <div class="col-md-6"> 
-
   <div class="form-group">
     <input type="text" class="form-control" name="poNumber" [(ngModel)]="model.poNumber" Placeholder="PoNumber">
   </div>
@@ -40,8 +38,7 @@
   <div class="form-group">
     <input type="text" class="form-control" name="partDescription" [(ngModel)]="model.partDescription" Placeholder="PartDescription">
   </div>
-</div>
-<div class="col-md-6">
+
   <div class="form-group">
     <input type="number" class="form-control" name="orderQty" [(ngModel)]="model.orderQty" Placeholder="OrderQty">
   </div>
@@ -129,7 +126,7 @@
   <div class="form-group">
     <input type="text" class="form-control" name="notes" [(ngModel)]="model.notes" Placeholder="Notes">
   </div>
-</div>
+
   <div class="form-group text-center">
     <button class="btn btn-success" [disabled]="!createForm.valid" type="submit">Create</button>
     <button class="btn btn-default" type="button" (click)="cancel()" >Cancel</button>
