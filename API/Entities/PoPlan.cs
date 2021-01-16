@@ -18,7 +18,7 @@ namespace API.Entities
         [Display(Name = "CustomerPo")]
         public string CustomerOrderNumber { get; set; }
 
-        [Display(Name = "MlsSo")]
+        [Display(Name = "SoNo")]
         public string SoNumber { get; set; }
 
         [DataType(DataType.Date)]
@@ -42,7 +42,7 @@ namespace API.Entities
 
         public string ContainerId { get; set; }
 
-        public string ContainerUh { get; set; }
+        public string ContainerExt { get; set; }
 
         public string FreightFowarder { get; set; }
 

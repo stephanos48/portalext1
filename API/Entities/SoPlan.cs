@@ -21,10 +21,10 @@ namespace API.Entities
         [Display(Name = "Customer PO Line")]
         public string CustomerOrderLine { get; set; }
 
-        [Display(Name = "MLS SO")]
+        [Display(Name = "Ext SO")]
         public string SoNumber { get; set; }
 
-        [Display(Name = "MLS WO")]
+        [Display(Name = "Ext WO")]
         public string WoNumber { get; set; }
 
         [Display(Name = "Customer PN")]
