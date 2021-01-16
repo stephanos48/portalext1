@@ -7,15 +7,15 @@
 <div class="modal-body">
     <form #txQohForm="ngForm" id="txQohForm">
         <div class="form-group">
-            <input type="text" class="form-control" required name="poNumber" [(ngModel)]="poplan.poNumber" placeholder="PoNumber">
+            <input type="text" class="form-control" required name="poNumber" [(ngModel)]="poplan.poNumber" Placeholder="PoNumber">
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" required name="poLine" [(ngModel)]="poplan.poLine" placeholder="PoLine">
+            <input type="text" class="form-control" required name="poLine" [(ngModel)]="poplan.poLine" Placeholder="PoLine">
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" required name="supplier" [(ngModel)]="poplan.supplier" placeholder="Supplier">
+            <input type="text" class="form-control" required name="supplier" [(ngModel)]="poplan.supplier" Placeholder="Supplier">
         </div>
 
         <div class="form-group">
@@ -48,10 +48,6 @@
 
         <div class="form-group">
             <input type="number" class="form-control" required name="receivedQty" [(ngModel)]="poplan.receivedQty" Placeholder="ReceivedQty">
-        </div>
-
-        <div class="form-group">
-            <input type="text" class="form-control" required name="orderQty" [(ngModel)]="poplan.orderQty" Placeholder="OrderQty">
         </div>
 
         <div class="form-group">
@@ -91,31 +87,23 @@
         </div>
         
         <div class="form-group">
-            <input type="text" class="form-control" required name="pallet" [(ngModel)]="poplan.pallet" Placeholder="Pallet">
+            <input type="text" class="form-control" required name="requestDateTime" [(ngModel)]="poplan.requestDateTime" Placeholder="RequestDateTime" bsDatepicker [bsConfig]="bsConfig">
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" required name="pallet" [(ngModel)]="poplan.pallet" Placeholder="Pallet">
+            <input type="text" class="form-control" required name="promiseDateTime" [(ngModel)]="poplan.promiseDateTime" Placeholder="PromiseDateTime" bsDatepicker [bsConfig]="bsConfig">
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" required name="requestDateTime" [(ngModel)]="poplan.requestDateTime" placeholder="RequestDateTime" bsDatepicker [bsConfig]="bsConfig">
+            <input type="text" class="form-control" required name="shipDateTime" [(ngModel)]="poplan.shipDateTime" Placeholder="ShipDateTime" bsDatepicker [bsConfig]="bsConfig">
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" required name="promiseDateTime" [(ngModel)]="poplan.promiseDateTime" placeholder="PromiseDateTime" bsDatepicker [bsConfig]="bsConfig">
+            <input type="text" class="form-control" required name="etaDateTime" [(ngModel)]="poplan.etaDateTime" Placeholder="EtaDateTime" bsDatepicker [bsConfig]="bsConfig">
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" required name="shipDateTime" [(ngModel)]="poplan.shipDateTime" placeholder="ShipDateTime" bsDatepicker [bsConfig]="bsConfig">
-        </div>
-
-        <div class="form-group">
-            <input type="text" class="form-control" required name="etaDateTime" [(ngModel)]="poplan.etaDateTime" placeholder="EtaDateTime" bsDatepicker [bsConfig]="bsConfig">
-        </div>
-
-        <div class="form-group">
-            <input type="text" class="form-control" required name="receiptDateTime" [(ngModel)]="poplan.receiptDateTime" placeholder="ReceiptDateTime" bsDatepicker [bsConfig]="bsConfig">
+            <input type="text" class="form-control" required name="receiptDateTime" [(ngModel)]="poplan.receiptDateTime" Placeholder="ReceiptDateTime" bsDatepicker [bsConfig]="bsConfig">
         </div>
 
         <div class="form-group">
@@ -123,7 +111,7 @@
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" required name="poSentDate" [(ngModel)]="poplan.poSentDate" placeholder="poSentDate" bsDatepicker [bsConfig]="bsConfig">
+            <input type="text" class="form-control" required name="poSentDate" [(ngModel)]="poplan.poSentDate" Placeholder="PoSentDate" bsDatepicker [bsConfig]="bsConfig">
         </div>
 
         <div class="form-group">
@@ -131,7 +119,7 @@
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" required name="poConfirmedDateTime" [(ngModel)]="poplan.poConfirmedDateTime" placeholder="poConfirmedDateTime" bsDatepicker [bsConfig]="bsConfig">
+            <input type="text" class="form-control" required name="poConfirmedDateTime" [(ngModel)]="poplan.poConfirmedDateTime" Placeholder="PoConfirmedDateTime" bsDatepicker [bsConfig]="bsConfig">
         </div>
 
         <div class="form-group">
@@ -139,7 +127,7 @@
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" required name="notes" [(ngModel)]="poplan.notes" placeholder="Notes">
+            <input type="text" class="form-control" required name="notes" [(ngModel)]="poplan.notes" Placeholder="Notes">
         </div>
 
     </form>
