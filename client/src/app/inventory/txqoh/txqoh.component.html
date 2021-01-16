@@ -1,11 +1,13 @@
 <div class="container mt-5">
   <div *ngIf="!createMode">
-    <div class="" style="text-align: left">
+    <h2>USA QOH</h2>
+    <a class="nav-link" [routerLink]="['/landing']"><h2><i class="fa fa-arrow-left"></i></h2></a>
+    <div style="text-align: left">
         <button class="btn btn-primary btn-md" (click)="createToggle()">Create</button>
     </div>
     <br>
     <div class="row" style="text-align: left"> 
-      <table class="table">
+      <table class="table bordered">
         <tr>
           <th style="width: 15%">Id</th>         
           <th style="width: 15%">Pn</th>
