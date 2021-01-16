@@ -12,6 +12,7 @@ import { TxQoh } from '../_models/txqoh';
 export class GeneralService {
   baseUrl = environment.apiUrl;
   formData: TxQoh;
+  formData1: PoPlan;
 
   constructor(private http: HttpClient) { }
 

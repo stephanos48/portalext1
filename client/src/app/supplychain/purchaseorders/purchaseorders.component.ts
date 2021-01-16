@@ -39,7 +39,7 @@ export class PurchaseordersComponent implements OnInit {
   }
 
   getPoPlans() {
-    this.generalService.getTxQohs().subscribe((poplans: PoPlan[]) => {
+    this.generalService.getPoPlans().subscribe((poplans: PoPlan[]) => {
       this.poplans = poplans;
     }, error => {
       console.log(error);
