@@ -23,6 +23,9 @@ namespace API.Helpers
                     src.Sender.Photos.FirstOrDefault(x => x.IsMain).Url))
                 .ForMember(dest => dest.RecipientPhotoUrl, opt => opt.MapFrom(src => 
                     src.Recipient.Photos.FirstOrDefault(x => x.IsMain).Url));
+            CreateMap<TxQohForCreationDto, TxQoh>();
+            CreateMap<TxQohForReturnDto, TxQoh>().ReverseMap();
+            CreateMap<TxQohForUpdateDto, TxQoh>();
         }
 
     }

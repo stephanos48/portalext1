@@ -15,6 +15,9 @@ import { MemberDetailedResolver } from './_resolvers/member-detailed.resolver';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { AdminGuard } from './_guards/admin.guard';
 import { LandingComponent } from './landing/landing.component';
+import { TxqohComponent } from './inventory/txqoh/txqoh.component';
+import { TxqohCreateComponent } from './inventory/txqoh-create/txqoh-create.component';
+import { TxqohModalComponent } from './inventory/txqoh-modal/txqoh-modal.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,12 +27,16 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path: 'members', component: MemberListComponent},
+      {path: 'landing', component: LandingComponent},
+      {path: 'txqoh', component: TxqohComponent},
+      {path: 'txqoh-modal', component: TxqohModalComponent},      
+      {path: 'txqoh-create', component: TxqohCreateComponent},
       {path: 'members/:username', component: MemberDetailComponent, resolve: {member: MemberDetailedResolver}},
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
-      {path: 'landing', component: LandingComponent},
+
     ]
   },
   {path: 'errors', component: TestErrorsComponent },

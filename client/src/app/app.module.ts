@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from './_modules/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +14,6 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
-import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
@@ -34,6 +34,14 @@ import { HasRoleDirective } from './_directives/has-role.directive';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
 import { LandingComponent } from './landing/landing.component';
+import { TxqohComponent } from './inventory/txqoh/txqoh.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatHeaderRow, MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { TxqohCreateComponent } from './inventory/txqoh-create/txqoh-create.component';
+import { TxqohEditComponent } from './inventory/txqoh-edit/txqoh-edit.component';
+import { TxqohModalComponent } from './inventory/txqoh-modal/txqoh-modal.component';
 
 
 @NgModule({
@@ -61,7 +69,12 @@ import { LandingComponent } from './landing/landing.component';
     HasRoleDirective,
     RolesModalComponent,
     ConfirmDialogComponent,
-    LandingComponent
+    LandingComponent,
+    TxqohComponent,
+    TxqohCreateComponent,
+    TxqohEditComponent,
+    TxqohModalComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -71,7 +84,17 @@ import { LandingComponent } from './landing/landing.component';
     FormsModule,
     SharedModule,
     NgxSpinnerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
+    MatTableModule
+
+  ],
+  exports: [
+    MatFormFieldModule,
+    MatInputModule,
+    MatHeaderRow
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

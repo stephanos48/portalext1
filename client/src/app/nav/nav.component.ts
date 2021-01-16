@@ -12,15 +12,17 @@ import { AccountService } from '../_services/account.service';
 })
 export class NavComponent implements OnInit {
   model: any = {}
+  photoUrl: string;
 
   constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    //this.accountService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
   }
 
   login(){
     this.accountService.login(this.model).subscribe(response => {
-      this.router.navigateByUrl('/members');
+      this.router.navigateByUrl('/landing');
     })
   }
 
