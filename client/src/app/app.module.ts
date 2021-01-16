@@ -42,6 +42,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { TxqohCreateComponent } from './inventory/txqoh-create/txqoh-create.component';
 import { TxqohEditComponent } from './inventory/txqoh-edit/txqoh-edit.component';
 import { TxqohModalComponent } from './inventory/txqoh-modal/txqoh-modal.component';
+import { SupplychainComponent } from './supplychain/supplychain/supplychain.component';
+import { PurchaseordersComponent } from './supplychain/purchaseorders/purchaseorders.component';
+import { PoplanModalComponent } from './supplychain/poplan-modal/poplan-modal.component';
+import { PoplanCreateComponent } from './supplychain/poplan-create/poplan-create.component';
 
 
 @NgModule({
@@ -73,7 +77,11 @@ import { TxqohModalComponent } from './inventory/txqoh-modal/txqoh-modal.compone
     TxqohComponent,
     TxqohCreateComponent,
     TxqohEditComponent,
-    TxqohModalComponent
+    TxqohModalComponent,
+    SupplychainComponent,
+    PurchaseordersComponent,
+    PoplanModalComponent,
+    PoplanCreateComponent
     
   ],
   imports: [

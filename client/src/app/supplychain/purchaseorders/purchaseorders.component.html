@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <div *ngIf="!createMode">
+      <h2>Purchase Orders</h2>
+      <a class="nav-link" [routerLink]="['/landing']"><h2><i class="fa fa-arrow-left"></i></h2></a>
+      <div style="text-align: left">
+          <button class="btn btn-primary btn-md" (click)="createToggle()">Create</button>
+      </div>
+      <br>
+      <div class="row" style="text-align: left"> 
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="width: 5%"></th>
+              <th style="width: 2%">Id</th>         
+              <th style="width: 10%">PoNumber</th>
+              <th style="width: 10%">OrderDate</th>
+              <th style="width: 20%">CustomerPn</th>
+              <th style="width: 5%">Qty</th>
+              <th style="width: 15%">Container</th>              
+              <th style="width: 10%">Eta</th>
+              <th style="width: 23%">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let poplan of poplans">
+              <td><button class="btn btn-info" (click)="editPoPlansModal(poplan)">Edit</button></td>
+              <td>{{poplan.poPlanId}}</td>          
+              <td>{{poplan.poNumber}}</td>
+              <td>{{poplan.orderDateTime}}</td>
+              <td>{{poplan.customerPn}}</td>
+              <td>{{poplan.orderQty}}</td>
+              <td>{{poplan.containerExt}}</td>              
+              <td>{{poplan.etaDateTime}}</td>
+              <td>{{poplan.notes}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div *ngIf="createMode" class="container">
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <app-poplan-create (cancelCreate)="cancelCreateMode($event)"></app-poplan-create>
+          </div>
+        </div>
+    </div>
+</div>

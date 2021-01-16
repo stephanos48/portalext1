@@ -10,8 +10,12 @@ namespace API.Interfaces
         void Add<T>(T entity) where T: class;
         void Delete<T>(T entity) where T: class;
         Task<bool> SaveAll();
+
         Task<IEnumerable<TxQoh>> GetTxQohsAsync();
         Task<TxQoh> GetTxQoh(int id);
+
+        Task<IEnumerable<PoPlan>> GetPoPlansAsync();
+        Task<PoPlan> GetPoPlan(int id);
 
         Task<bool> SaveChangesAsync();
     }

@@ -26,6 +26,9 @@ namespace API.Helpers
             CreateMap<TxQohForCreationDto, TxQoh>();
             CreateMap<TxQohForReturnDto, TxQoh>().ReverseMap();
             CreateMap<TxQohForUpdateDto, TxQoh>();
+            CreateMap<PoPlanForCreationDto, PoPlan>();
+            CreateMap<PoPlanForReturnDto, PoPlan>().ReverseMap();
+            CreateMap<PoPlanForUpdateDto, PoPlan>();
         }
 
     }

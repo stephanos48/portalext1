@@ -1,0 +1,151 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Edit Qoh: {{poplan?.customerPn}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form #txQohForm="ngForm" id="txQohForm">
+        <div class="form-group">
+            <input type="text" class="form-control" required name="poNumber" [(ngModel)]="poplan.poNumber" placeholder="PoNumber">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="poLine" [(ngModel)]="poplan.poLine" placeholder="PoLine">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="supplier" [(ngModel)]="poplan.supplier" placeholder="Supplier">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="customerOrderNumber" [(ngModel)]="poplan.customerOrderNumber" Placeholder="CustomerOrderNumber">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="soNumber" [(ngModel)]="poplan.soNumber" Placeholder="SoNumber">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="orderDateTime" [(ngModel)]="poplan.orderDateTime" placeholder="OrderDateTime" bsDatepicker [bsConfig]="bsConfig">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="customerPn" [(ngModel)]="poplan.customerPn" Placeholder="CustomerPn">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="extremePn" [(ngModel)]="poplan.extremePn" Placeholder="ExtremePn">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="partDescription" [(ngModel)]="poplan.partDescription" Placeholder="PartDescription">
+        </div>
+
+        <div class="form-group">
+            <input type="number" class="form-control" required name="orderQty" [(ngModel)]="poplan.orderQty" Placeholder="OrderQty">
+        </div>
+
+        <div class="form-group">
+            <input type="number" class="form-control" required name="receivedQty" [(ngModel)]="poplan.receivedQty" Placeholder="ReceivedQty">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="orderQty" [(ngModel)]="poplan.orderQty" Placeholder="OrderQty">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="containerId" [(ngModel)]="poplan.containerId" Placeholder="ContainerId">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="containerExt" [(ngModel)]="poplan.containerExt" Placeholder="ContainerExt">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="freightForwarder" [(ngModel)]="poplan.freightForwarder" Placeholder="FreightForwarder">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="destination" [(ngModel)]="poplan.destination" Placeholder="Destination">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="ams" [(ngModel)]="poplan.ams" Placeholder="Ams">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="bol" [(ngModel)]="poplan.bol" Placeholder="Bol">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="pallet" [(ngModel)]="poplan.pallet" Placeholder="Pallet">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="invoice" [(ngModel)]="poplan.invoice" Placeholder="Invoice">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="arrivalWk" [(ngModel)]="poplan.arrivalWk" Placeholder="ArrivalWk">
+        </div>
+        
+        <div class="form-group">
+            <input type="text" class="form-control" required name="pallet" [(ngModel)]="poplan.pallet" Placeholder="Pallet">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="pallet" [(ngModel)]="poplan.pallet" Placeholder="Pallet">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="requestDateTime" [(ngModel)]="poplan.requestDateTime" placeholder="RequestDateTime" bsDatepicker [bsConfig]="bsConfig">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="promiseDateTime" [(ngModel)]="poplan.promiseDateTime" placeholder="PromiseDateTime" bsDatepicker [bsConfig]="bsConfig">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="shipDateTime" [(ngModel)]="poplan.shipDateTime" placeholder="ShipDateTime" bsDatepicker [bsConfig]="bsConfig">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="etaDateTime" [(ngModel)]="poplan.etaDateTime" placeholder="EtaDateTime" bsDatepicker [bsConfig]="bsConfig">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="receiptDateTime" [(ngModel)]="poplan.receiptDateTime" placeholder="ReceiptDateTime" bsDatepicker [bsConfig]="bsConfig">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="poOrderStatus" [(ngModel)]="poplan.poOrderStatus" Placeholder="PoOrderStatus">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="poSentDate" [(ngModel)]="poplan.poSentDate" placeholder="poSentDate" bsDatepicker [bsConfig]="bsConfig">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="poSentBy" [(ngModel)]="poplan.poSentBy" Placeholder="PoSentBy">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="poConfirmedDateTime" [(ngModel)]="poplan.poConfirmedDateTime" placeholder="poConfirmedDateTime" bsDatepicker [bsConfig]="bsConfig">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="poConfirmedBy" [(ngModel)]="poplan.poConfirmedBy" Placeholder="PoConfirmedBy">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" required name="notes" [(ngModel)]="poplan.notes" placeholder="Notes">
+        </div>
+
+    </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Cancel</button>
+  <button type="button" class="btn btn-success" (click)="updatePoPlan()" form="poPlanForm">Submit</button>
+</div>

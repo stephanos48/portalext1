@@ -1,0 +1,148 @@
+<form #createForm="ngForm" (ngSubmit)="create()">
+
+  <h2 class="text-center text-primary"> Create a new Part Number</h2>
+  <hr>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="poNumber" [(ngModel)]="model.poNumber" placeholder="PoNumber">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="poLine" [(ngModel)]="model.poLine" placeholder="PoLine">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="supplier" [(ngModel)]="model.supplier" placeholder="Supplier">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="customerOrderNumber" [(ngModel)]="model.customerOrderNumber" Placeholder="CustomerOrderNumber">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="soNumber" [(ngModel)]="model.soNumber" Placeholder="SoNumber">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="orderDateTime" [(ngModel)]="model.orderDateTime" placeholder="OrderDateTime" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="customerPn" [(ngModel)]="model.customerPn" Placeholder="CustomerPn">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="extremePn" [(ngModel)]="model.extremePn" Placeholder="ExtremePn">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="partDescription" [(ngModel)]="model.partDescription" Placeholder="PartDescription">
+  </div>
+
+  <div class="form-group">
+    <input type="number" class="form-control" required name="orderQty" [(ngModel)]="model.orderQty" Placeholder="OrderQty">
+  </div>
+
+  <div class="form-group">
+    <input type="number" class="form-control" required name="receivedQty" [(ngModel)]="model.receivedQty" Placeholder="ReceivedQty">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="orderQty" [(ngModel)]="model.orderQty" Placeholder="OrderQty">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="containerId" [(ngModel)]="model.containerId" Placeholder="ContainerId">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="containerExt" [(ngModel)]="model.containerExt" Placeholder="ContainerExt">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="freightForwarder" [(ngModel)]="model.freightForwarder" Placeholder="FreightForwarder">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="destination" [(ngModel)]="model.destination" Placeholder="Destination">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="ams" [(ngModel)]="model.ams" Placeholder="Ams">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="bol" [(ngModel)]="model.bol" Placeholder="Bol">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="pallet" [(ngModel)]="model.pallet" Placeholder="Pallet">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="invoice" [(ngModel)]="model.invoice" Placeholder="Invoice">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="arrivalWk" [(ngModel)]="model.arrivalWk" Placeholder="ArrivalWk">
+  </div>
+  
+  <div class="form-group">
+    <input type="text" class="form-control" required name="pallet" [(ngModel)]="model.pallet" Placeholder="Pallet">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="pallet" [(ngModel)]="model.pallet" Placeholder="Pallet">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="requestDateTime" [(ngModel)]="model.requestDateTime" placeholder="RequestDateTime" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="promiseDateTime" [(ngModel)]="model.promiseDateTime" placeholder="PromiseDateTime" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="shipDateTime" [(ngModel)]="model.shipDateTime" placeholder="ShipDateTime" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="etaDateTime" [(ngModel)]="model.etaDateTime" placeholder="EtaDateTime" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="receiptDateTime" [(ngModel)]="model.receiptDateTime" placeholder="ReceiptDateTime" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="poOrderStatus" [(ngModel)]="model.poOrderStatus" Placeholder="PoOrderStatus">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="poSentDate" [(ngModel)]="model.poSentDate" placeholder="poSentDate" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="poSentBy" [(ngModel)]="model.poSentBy" Placeholder="PoSentBy">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="poConfirmedDateTime" [(ngModel)]="model.poConfirmedDateTime" placeholder="poConfirmedDateTime" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="poConfirmedBy" [(ngModel)]="model.poConfirmedBy" Placeholder="PoConfirmedBy">
+  </div>
+
+  <div class="form-group">
+      <input type="text" class="form-control" required name="notes" [(ngModel)]="model.notes" placeholder="Notes">
+  </div>
+
+  <div class="form-group text-center">
+    <button class="btn btn-success" [disabled]="!createForm.valid" type="submit">Create</button>
+    <button class="btn btn-default" type="button" (click)="cancel()" >Cancel</button>
+  </div>
+  
+</form>
+

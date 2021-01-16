@@ -45,6 +45,18 @@ namespace API.Data
             return specificpn;
         }
 
+        public async Task<IEnumerable<PoPlan>> GetPoPlansAsync()
+        {
+            var poplans = await _context.PoPlans.ToListAsync();
+            return poplans;
+        }
+ 
+        public async Task<PoPlan> GetPoPlan(int id)
+        {
+            var poplanspecific = await _context.PoPlans.FirstOrDefaultAsync(m => m.PoPlanId == id);
+            return poplanspecific;
+        }
+
         public async Task<bool> SaveChangesAsync()
         {
             return (await _context.SaveChangesAsync()) > 0;

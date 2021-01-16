@@ -7,25 +7,29 @@
     </div>
     <br>
     <div class="row" style="text-align: left"> 
-      <table class="table bordered">
-        <tr>
-          <th style="width: 15%">Id</th>         
-          <th style="width: 15%">Pn</th>
-          <th style="width: 20%">Description</th>
-          <th style="width: 20%">Qoh</th>
-          <th style="width: 20%">Location</th>
-          <th style="width: 20%">Notes</th>
-          <th style="width: 5%"></th>
-        </tr>
-        <tr *ngFor="let txqoh of txqohs">
-          <td>{{txqoh.txQohId}}</td>          
-          <td>{{txqoh.pn}}</td>
-          <td>{{txqoh.partDescription}}</td>
-          <td>{{txqoh.qoh}}</td>
-          <td>{{txqoh.location}}</td>
-          <td>{{txqoh.notes}}</td>
-          <td><button class="btn btn-info" (click)="editTxQohsModal(txqoh)">Edit</button></td>
-        </tr>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th style="width: 5%"></th>
+            <th style="width: 15%">Id</th>         
+            <th style="width: 15%">Pn</th>
+            <th style="width: 20%">Description</th>
+            <th style="width: 20%">Qoh</th>
+            <th style="width: 20%">Location</th>
+            <th style="width: 20%">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let txqoh of txqohs">
+            <td><button class="btn btn-info" (click)="editTxQohsModal(txqoh)">Edit</button></td>
+            <td>{{txqoh.txQohId}}</td>          
+            <td>{{txqoh.pn}}</td>
+            <td>{{txqoh.partDescription}}</td>
+            <td>{{txqoh.qoh}}</td>
+            <td>{{txqoh.location}}</td>
+            <td>{{txqoh.notes}}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>

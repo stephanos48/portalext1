@@ -18,6 +18,9 @@ import { LandingComponent } from './landing/landing.component';
 import { TxqohComponent } from './inventory/txqoh/txqoh.component';
 import { TxqohCreateComponent } from './inventory/txqoh-create/txqoh-create.component';
 import { TxqohModalComponent } from './inventory/txqoh-modal/txqoh-modal.component';
+import { PurchaseordersComponent } from './supplychain/purchaseorders/purchaseorders.component';
+import { PoplanCreateComponent } from './supplychain/poplan-create/poplan-create.component';
+import { PoplanModalComponent } from './supplychain/poplan-modal/poplan-modal.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -35,6 +38,9 @@ const routes: Routes = [
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
+      {path: 'purchaseorders', component: PurchaseordersComponent},
+      {path: 'poplan-create', component: PoplanCreateComponent},
+      {path: 'poplan-modal', component: PoplanModalComponent},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
 
     ]

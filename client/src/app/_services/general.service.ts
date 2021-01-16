@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { PoPlan } from '../_models/poplan';
 import { TxQoh } from '../_models/txqoh';
 
 @Injectable({
@@ -45,6 +46,28 @@ export class GeneralService {
 
   deleteTxQoh(id: number, txqoh: TxQoh) {
     return this.http.post(this.baseUrl + 'txqoh/' + id, txqoh);
+  }
+
+
+
+  getPoPlans() {
+    return this.http.get(this.baseUrl + 'poplans/getPoPlans');
+  }
+
+  updatePoPlan(id: number, poplan: PoPlan) {
+    return this.http.put(this.baseUrl + 'poplans/' + id, poplan);
+  }
+
+  createPoPlan(poplan: PoPlan) {
+    return this.http.post(this.baseUrl + 'poplans/createPoPlan', poplan);
+  }
+
+  getPoPlan(id): Observable<PoPlan> {
+    return this.http.get<PoPlan>(this.baseUrl + 'poplan/' + id);
+  }
+
+  deletePoPlan(id: number, poplan: PoPlan) {
+    return this.http.post(this.baseUrl + 'poplan/' + id, poplan);
   }
 
   
