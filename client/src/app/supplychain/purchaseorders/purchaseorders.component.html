@@ -26,11 +26,11 @@
               <td><button class="btn btn-info" (click)="editPoPlansModal(poplan)">Edit</button></td>
               <td>{{poplan.poPlanId}}</td>          
               <td>{{poplan.poNumber}}</td>
-              <td>{{poplan.orderDateTime}}</td>
+              <td>{{poplan.orderDateTime | date:'shortDate'}}</td>
               <td>{{poplan.customerPn}}</td>
               <td>{{poplan.orderQty}}</td>
               <td>{{poplan.containerExt}}</td>              
-              <td>{{poplan.etaDateTime}}</td>
+              <td>{{poplan.etaDateTime | date:'shortDate'}}</td>
               <td>{{poplan.notes}}</td>
             </tr>
           </tbody>

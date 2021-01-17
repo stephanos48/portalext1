@@ -20,7 +20,7 @@ export interface PoPlan {
     pallet: string;
     invoice: string;
     arrivalWk: string;
-    requestDateTime: Date;
+    requestedDateTime: Date;
     promiseDateTime: Date;
     shipDateTime: Date;
     etaDateTime: Date;
