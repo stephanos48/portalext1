@@ -70,12 +70,12 @@ namespace API.DTOs
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "ShipDate")]
-        public DateTime? Shipdate { get; set; }
+        public DateTime? ShipDateTime { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "EtaDate")]
-        public DateTime? Etadate { get; set; }
+        public DateTime? EtaDateTime { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

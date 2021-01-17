@@ -26,7 +26,7 @@ export interface PoPlan {
     etaDateTime: Date;
     receiptDateTime: Date;
     poOrderStatus: string;
-    poSentDate: string;
+    poSentDateTime: string;
     poSentBy: string;
     poConfirmedDateTime: string;
     poConfirmedBy: string;
