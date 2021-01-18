@@ -28,7 +28,7 @@ export class PoplanCreateComponent implements OnInit {
     }, error => {
       this.Toastr.error(error);
     }, () => {
-      this.router.navigate(['/purchaseorders']);
+      this.router.navigate(['/landing']);
     });
   }
 

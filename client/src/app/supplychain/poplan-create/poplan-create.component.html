@@ -1,7 +1,7 @@
-<h2 class="text-center text-primary"> Create a new Part Number</h2>
+<h2 class="text-center text-primary">Create a new Part Number</h2>
 <hr>
 
-<form #createForm="ngForm" (ngSubmit)="create()">
+<form #poPlanForm="ngForm" id="poPlanForm">
   <div class="form-group">
     <input type="text" class="form-control" name="poNumber" [(ngModel)]="poplan.poNumber" Placeholder="PoNumber">
   </div>
@@ -23,7 +23,7 @@
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="orderDateTime" [(ngModel)]="poplan.orderDateTime" Placeholder="OrderDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="date" class="form-control" name="orderDateTime" [(ngModel)]="poplan.orderDateTime" Placeholder="OrderDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
@@ -83,23 +83,23 @@
   </div>
   
   <div class="form-group">
-    <input type="text" class="form-control" name="requestDateTime" [(ngModel)]="poplan.requestedDateTime" Placeholder="RequestDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="date" class="form-control" name="requestDateTime" [(ngModel)]="poplan.requestedDateTime" Placeholder="RequestDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="promiseDateTime" [(ngModel)]="poplan.promiseDateTime" Placeholder="PromiseDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="date" class="form-control" name="promiseDateTime" [(ngModel)]="poplan.promiseDateTime" Placeholder="PromiseDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="shipDateTime" [(ngModel)]="poplan.shipDateTime" Placeholder="ShipDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="date" class="form-control" name="shipDateTime" [(ngModel)]="poplan.shipDateTime" Placeholder="ShipDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="etaDateTime" [(ngModel)]="poplan.etaDateTime" Placeholder="EtaDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="date" class="form-control" name="etaDateTime" [(ngModel)]="poplan.etaDateTime" Placeholder="EtaDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="receiptDateTime" [(ngModel)]="poplan.receiptDateTime" Placeholder="ReceiptDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="date" class="form-control" name="receiptDateTime" [(ngModel)]="poplan.receiptDateTime" Placeholder="ReceiptDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
@@ -107,7 +107,7 @@
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="poSentDateTime" [(ngModel)]="poplan.poSentDateTime" placeholder="PoSentDate" bsDatepicker [bsConfig]="bsConfig">
+    <input type="date" class="form-control" name="poSentDateTime" [(ngModel)]="poplan.poSentDateTime" placeholder="PoSentDate" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
@@ -115,7 +115,7 @@
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="poConfirmedDateTime" [(ngModel)]="poplan.poConfirmedDateTime" Placeholder="PoConfirmedDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="date" class="form-control" name="poConfirmedDateTime" [(ngModel)]="poplan.poConfirmedDateTime" Placeholder="PoConfirmedDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
@@ -128,7 +128,7 @@
 </form>
  
 <div class="form-group text-center">
-  <button class="btn btn-success" [disabled]="!createForm.valid" type="submit">Create</button>
+  <button class="btn btn-success" [disabled]="!poPlanForm.valid" (click)="create()" form="poPlanForm">Create</button>
   <button class="btn btn-default" type="button" (click)="cancel()" >Cancel</button>
 </div>
 
