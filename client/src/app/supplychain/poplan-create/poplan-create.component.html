@@ -1,136 +1,136 @@
+<h2 class="text-center text-primary"> Create a new Part Number</h2>
+<hr>
+
 <form #createForm="ngForm" (ngSubmit)="create()">
-
-  <h2 class="text-center text-primary"> Create a new Part Number</h2>
-  <hr>
-
   <div class="form-group">
-    <input type="text" class="form-control" name="poNumber" [(ngModel)]="model.poNumber" Placeholder="PoNumber">
+    <input type="text" class="form-control" name="poNumber" [(ngModel)]="poplan.poNumber" Placeholder="PoNumber">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="poLine" [(ngModel)]="model.poLine" Placeholder="PoLine">
+    <input type="text" class="form-control" name="poLine" [(ngModel)]="poplan.poLine" Placeholder="PoLine">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="supplier" [(ngModel)]="model.supplier" Placeholder="Supplier">
+    <input type="text" class="form-control" name="supplier" [(ngModel)]="poplan.supplier" Placeholder="Supplier">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="customerOrderNumber" [(ngModel)]="model.customerOrderNumber" Placeholder="CustomerOrderNumber">
+    <input type="text" class="form-control" name="customerOrderNumber" [(ngModel)]="poplan.customerOrderNumber" Placeholder="CustomerOrderNumber">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="soNumber" [(ngModel)]="model.soNumber" Placeholder="SoNumber">
+    <input type="text" class="form-control" name="soNumber" [(ngModel)]="poplan.soNumber" Placeholder="SoNumber">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="orderDateTime" [(ngModel)]="model.orderDateTime" Placeholder="OrderDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="text" class="form-control" name="orderDateTime" [(ngModel)]="poplan.orderDateTime" Placeholder="OrderDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="customerPn" [(ngModel)]="model.customerPn" Placeholder="CustomerPn">
+    <input type="text" class="form-control" name="customerPn" [(ngModel)]="poplan.customerPn" Placeholder="CustomerPn">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="extremePn" [(ngModel)]="model.extremePn" Placeholder="ExtremePn">
+    <input type="text" class="form-control" name="extremePn" [(ngModel)]="poplan.extremePn" Placeholder="ExtremePn">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="partDescription" [(ngModel)]="model.partDescription" Placeholder="PartDescription">
+    <input type="text" class="form-control" name="partDescription" [(ngModel)]="poplan.partDescription" Placeholder="PartDescription">
   </div>
 
   <div class="form-group">
-    <input type="number" class="form-control" name="orderQty" [(ngModel)]="model.orderQty" Placeholder="OrderQty">
+    <input type="number" class="form-control" name="orderQty" [(ngModel)]="poplan.orderQty" Placeholder="OrderQty">
   </div>
 
   <div class="form-group">
-    <input type="number" class="form-control" name="receivedQty" [(ngModel)]="model.receivedQty" Placeholder="ReceivedQty">
+    <input type="number" class="form-control" name="receivedQty" [(ngModel)]="poplan.receivedQty" Placeholder="ReceivedQty">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="containerId" [(ngModel)]="model.containerId" Placeholder="ContainerId">
+    <input type="text" class="form-control" name="containerId" [(ngModel)]="poplan.containerId" Placeholder="ContainerId">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="containerExt" [(ngModel)]="model.containerExt" Placeholder="ContainerExt">
+    <input type="text" class="form-control" name="containerExt" [(ngModel)]="poplan.containerExt" Placeholder="ContainerExt">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="freightForwarder" [(ngModel)]="model.freightForwarder" Placeholder="FreightForwarder">
+    <input type="text" class="form-control" name="freightForwarder" [(ngModel)]="poplan.freightForwarder" Placeholder="FreightForwarder">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="destination" [(ngModel)]="model.destination" Placeholder="Destination">
+    <input type="text" class="form-control" name="destination" [(ngModel)]="poplan.destination" Placeholder="Destination">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="ams" [(ngModel)]="model.ams" Placeholder="Ams">
+    <input type="text" class="form-control" name="ams" [(ngModel)]="poplan.ams" Placeholder="Ams">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="bol" [(ngModel)]="model.bol" Placeholder="Bol">
+    <input type="text" class="form-control" name="bol" [(ngModel)]="poplan.bol" Placeholder="Bol">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="pallet" [(ngModel)]="model.pallet" Placeholder="Pallet">
+    <input type="text" class="form-control" name="pallet" [(ngModel)]="poplan.pallet" Placeholder="Pallet">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="invoice" [(ngModel)]="model.invoice" Placeholder="Invoice">
+    <input type="text" class="form-control" name="invoice" [(ngModel)]="poplan.invoice" Placeholder="Invoice">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="arrivalWk" [(ngModel)]="model.arrivalWk" Placeholder="ArrivalWk">
+    <input type="text" class="form-control" name="arrivalWk" [(ngModel)]="poplan.arrivalWk" Placeholder="ArrivalWk">
   </div>
   
   <div class="form-group">
-    <input type="text" class="form-control" name="requestDateTime" [(ngModel)]="model.requestedDateTime" Placeholder="RequestDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="text" class="form-control" name="requestDateTime" [(ngModel)]="poplan.requestedDateTime" Placeholder="RequestDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="promiseDateTime" [(ngModel)]="model.promiseDateTime" Placeholder="PromiseDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="text" class="form-control" name="promiseDateTime" [(ngModel)]="poplan.promiseDateTime" Placeholder="PromiseDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="shipDateTime" [(ngModel)]="model.shipDateTime" Placeholder="ShipDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="text" class="form-control" name="shipDateTime" [(ngModel)]="poplan.shipDateTime" Placeholder="ShipDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="etaDateTime" [(ngModel)]="model.etaDateTime" Placeholder="EtaDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="text" class="form-control" name="etaDateTime" [(ngModel)]="poplan.etaDateTime" Placeholder="EtaDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="receiptDateTime" [(ngModel)]="model.receiptDateTime" Placeholder="ReceiptDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="text" class="form-control" name="receiptDateTime" [(ngModel)]="poplan.receiptDateTime" Placeholder="ReceiptDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="poOrderStatus" [(ngModel)]="model.poOrderStatus" Placeholder="PoOrderStatus">
+    <input type="text" class="form-control" name="poOrderStatus" [(ngModel)]="poplan.poOrderStatus" Placeholder="PoOrderStatus">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="poSentDateTime" [(ngModel)]="model.poSentDateTime" placeholder="PoSentDate" bsDatepicker [bsConfig]="bsConfig">
+    <input type="text" class="form-control" name="poSentDateTime" [(ngModel)]="poplan.poSentDateTime" placeholder="PoSentDate" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="poSentBy" [(ngModel)]="model.poSentBy" Placeholder="PoSentBy">
+    <input type="text" class="form-control" name="poSentBy" [(ngModel)]="poplan.poSentBy" Placeholder="PoSentBy">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="poConfirmedDateTime" [(ngModel)]="model.poConfirmedDateTime" Placeholder="PoConfirmedDateTime" bsDatepicker [bsConfig]="bsConfig">
+    <input type="text" class="form-control" name="poConfirmedDateTime" [(ngModel)]="poplan.poConfirmedDateTime" Placeholder="PoConfirmedDateTime" bsDatepicker [bsConfig]="bsConfig">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="poConfirmedBy" [(ngModel)]="model.poConfirmedBy" Placeholder="PoConfirmedBy">
+    <input type="text" class="form-control" name="poConfirmedBy" [(ngModel)]="poplan.poConfirmedBy" Placeholder="PoConfirmedBy">
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="notes" [(ngModel)]="model.notes" Placeholder="Notes">
+    <input type="text" class="form-control" name="notes" [(ngModel)]="poplan.notes" Placeholder="Notes">
   </div>
-
-  <div class="form-group text-center">
-    <button class="btn btn-success" [disabled]="!createForm.valid" type="submit">Create</button>
-    <button class="btn btn-default" type="button" (click)="cancel()" >Cancel</button>
-  </div>
-
 </form>
+ 
+<div class="form-group text-center">
+  <button class="btn btn-success" [disabled]="!createForm.valid" type="submit">Create</button>
+  <button class="btn btn-default" type="button" (click)="cancel()" >Cancel</button>
+</div>
+
+
 

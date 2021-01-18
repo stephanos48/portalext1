@@ -3,6 +3,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { ToastrService } from 'ngx-toastr';
+import { PoPlan } from 'src/app/_models/poplan';
 import { GeneralService } from 'src/app/_services/general.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { GeneralService } from 'src/app/_services/general.service';
 })
 export class PoplanCreateComponent implements OnInit {
   @Output() cancelCreate = new EventEmitter();
-  model: any = {};
+  poplan: PoPlan;
   bsConfig: Partial<BsDatepickerConfig>;
   
   constructor(private generalService: GeneralService, private http: HttpClient,
@@ -22,12 +23,12 @@ export class PoplanCreateComponent implements OnInit {
   }
 
   create() {
-    this.generalService.createPoPlan(this.model).subscribe(() => {
+    this.generalService.createPoPlan(this.poplan).subscribe(() => {
       console.log('created successfully');
     }, error => {
       this.Toastr.error(error);
     }, () => {
-      this.router.navigate(['/poplan']);
+      this.router.navigate(['/purchaseorders']);
     });
   }
 
