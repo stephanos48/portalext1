@@ -13,7 +13,8 @@ import { GeneralService } from 'src/app/_services/general.service';
 })
 export class PoplanCreateComponent implements OnInit {
   @Output() cancelCreate = new EventEmitter();
-  poplan: PoPlan;
+  //poplan: PoPlan;
+  model: any = {};
   bsConfig: Partial<BsDatepickerConfig>;
   
   constructor(private generalService: GeneralService, private http: HttpClient,
@@ -23,7 +24,7 @@ export class PoplanCreateComponent implements OnInit {
   }
 
   create() {
-    this.generalService.createPoPlan(this.poplan).subscribe(() => {
+    this.generalService.createPoPlan(this.model).subscribe(() => {
       console.log('created successfully');
     }, error => {
       this.Toastr.error(error);
