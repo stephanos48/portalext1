@@ -73,7 +73,7 @@ namespace API.Controllers
                 {
                 var poplanToReturn = _mapper.Map<PoPlanForReturnDto>(poplanToCreate);
                 return CreatedAtRoute("GetPoPlan", 
-                        new { controller = "PoPlan", id = poplanToCreate.PoPlanId }, poplanToReturn);
+                        new { controller = "PoPlans", id = poplanToCreate.PoPlanId }, poplanToReturn);
                 }
                 else
                 {

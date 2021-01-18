@@ -64,11 +64,11 @@ export class GeneralService {
   }
 
   getPoPlan(id): Observable<PoPlan> {
-    return this.http.get<PoPlan>(this.baseUrl + 'poplan/' + id);
+    return this.http.get<PoPlan>(this.baseUrl + 'poplans/' + id);
   }
 
   deletePoPlan(id: number, poplan: PoPlan) {
-    return this.http.post(this.baseUrl + 'poplan/' + id, poplan);
+    return this.http.post(this.baseUrl + 'poplans/' + id, poplan);
   }
 
   
