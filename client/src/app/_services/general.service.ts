@@ -33,6 +33,10 @@ export class GeneralService {
     return this.http.get(this.baseUrl + 'txqoh/getTxQohs');
   }
 
+  getActualQohs() {
+    return this.http.get(this.baseUrl + 'txqoh/getActualQohs');
+  }
+
   updateTxQoh(id: number, txqoh: TxQoh) {
     return this.http.put(this.baseUrl + 'txqoh/' + id, txqoh);
   }

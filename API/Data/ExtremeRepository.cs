@@ -38,6 +38,30 @@ namespace API.Data
             var txqohs = await _context.TxQohs.ToListAsync();
             return txqohs;
         }
+
+        public async Task<IEnumerable<TxQoh>> GetActualQohAsync()
+        {
+            var startDate = DateTime.Parse("1/1/2021");
+            var query = from tx in _context.TxQohs
+                        join r in _context.PoPlans.Where(a=>a.ReceiptDateTime >= startDate).Where(y=>y.PoOrderStatus == 5) on tx.Pn equals r.CustomerPn into g
+                        join r in _context.SoPlans.Where(a=>a.ShipDateTime >= startDate).Where(y=>y.ShipPlanStatus == 5) on tx.Pn equals r.CustomerPn into gr
+                        orderby tx.Pn
+                        select new
+                        {
+                            Id = tx.TxQohId,
+                            Pn = tx.Pn,
+                            Customer = tx.Customer,
+                            Jan1Qoh = tx.Qoh,
+                            Jan1Rec = (int?)g.Select(x => x.ReceivedQty).DefaultIfEmpty(0).Sum(),
+                            Jan1Ship = (int?)gr.Select(x => x.ShipQty).DefaultIfEmpty(0).Sum(),
+                            Qoh = tx.Qoh + (int?)g.Select(x => x.ReceivedQty).DefaultIfEmpty(0).Sum() - (int?)gr.Select(x => x.ShipQty).DefaultIfEmpty(0).Sum(),
+                            Location = tx.Location,
+                            Notes = tx.Notes
+                        };
+
+            //var txqohs = await _context.TxQohs.ToListAsync();
+            return query;
+        }
  
         public async Task<TxQoh> GetTxQoh(int id)
         {

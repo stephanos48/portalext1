@@ -33,6 +33,17 @@ namespace API.Controllers
 
             return Ok(txqohsToReturn);
         }
+
+        [HttpGet("getActualQohs")]
+        public async Task<IActionResult> GetActualQohs()
+        {
+
+            var txqohs = await _unitOfWork.ExtremeRepository.GetActualQohsAsync();
+
+            var txqohsToReturn = _mapper.Map<IEnumerable<TxQohForReturnDto>>(txqohs);
+
+            return Ok(txqohsToReturn);
+        }
       
         [HttpGet("{id}", Name = "getTxQoh")]
         public async Task<IActionResult> GetTxQoh(int id)
