@@ -18,5 +18,7 @@ namespace API.Interfaces
         Task<PoPlan> GetPoPlan(int id);
 
         Task<bool> SaveChangesAsync();
+
+        Task<IEnumerable<TxQoh>> GetActualQohAsync();
     }
 }
