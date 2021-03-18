@@ -38,7 +38,7 @@ namespace API.Data
             var txqohs = await _context.TxQohs.ToListAsync();
             return txqohs;
         }
-
+/*
         public async Task<IEnumerable<TxQoh>> GetActualQohAsync()
         {
             var startDate = DateTime.Parse("1/1/2021");
@@ -62,7 +62,7 @@ namespace API.Data
             //var txqohs = await _context.TxQohs.ToListAsync();
             return query;
         }
- 
+ */
         public async Task<TxQoh> GetTxQoh(int id)
         {
             var specificpn = await _context.TxQohs.FirstOrDefaultAsync(m => m.TxQohId == id);
