@@ -39,7 +39,7 @@ namespace API.Data
             return txqohs;
         }
 
-        public async Task<IEnumerable<TxQoh>> GetActualQohAsync()
+        public async Task<IEnumerable<TxQoh>> GetActualQohsAsync()
         {
 
             var txqohs = await _context.TxQohs.ToListAsync();
