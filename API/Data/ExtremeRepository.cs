@@ -38,9 +38,13 @@ namespace API.Data
             var txqohs = await _context.TxQohs.ToListAsync();
             return txqohs;
         }
-/*
+
         public async Task<IEnumerable<TxQoh>> GetActualQohAsync()
         {
+
+            var txqohs = await _context.TxQohs.ToListAsync();
+            return txqohs;
+            /*
             var startDate = DateTime.Parse("1/1/2021");
             var query = from tx in _context.TxQohs
                         join r in _context.PoPlans.Where(a=>a.ReceiptDateTime >= startDate).Where(y=>y.PoOrderStatus == 5) on tx.Pn equals r.CustomerPn into g
@@ -61,8 +65,9 @@ namespace API.Data
 
             //var txqohs = await _context.TxQohs.ToListAsync();
             return query;
+            */
         }
- */
+ 
         public async Task<TxQoh> GetTxQoh(int id)
         {
             var specificpn = await _context.TxQohs.FirstOrDefaultAsync(m => m.TxQohId == id);
