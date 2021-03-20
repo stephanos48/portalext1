@@ -19,6 +19,6 @@ namespace API.Interfaces
 
         Task<bool> SaveChangesAsync();
 
-        Task<IEnumerable<TxQoh>> GetActualQohsAsync();
+        Task<IEnumerable<SoPlan>> GetSoPlansAsync();
     }
 }

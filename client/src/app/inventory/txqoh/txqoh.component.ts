@@ -17,7 +17,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatInput } from '@angular/material/input';
 import { MatFormField } from '@angular/material/form-field';
-import { TxQoh } from 'src/app/_models/txqoh';
+import { TxQoh } from 'src/app/_models/txqohactual';
 import { GeneralService } from 'src/app/_services/general.service';
 import { ToastrService } from 'ngx-toastr';
 import { TxqohModalComponent } from '../txqoh-modal/txqoh-modal.component';
@@ -30,8 +30,8 @@ import { TxqohModalComponent } from '../txqoh-modal/txqoh-modal.component';
 export class TxqohComponent implements OnInit {
   @Output() cancelCreate = new EventEmitter();
   baseUrl = environment.apiUrl;
-  txqohs: TxQoh[];
-  txqoh: TxQoh = JSON.parse(localStorage.getItem('txqoh'));
+  txqohactuals: TxQoh[];
+  txqohactual: TxQoh = JSON.parse(localStorage.getItem('txqohactual'));
   createForm: FormGroup;
   bsConfig: Partial<BsDatepickerConfig>;
   createMode = false;
@@ -74,8 +74,8 @@ export class TxqohComponent implements OnInit {
   }
 
   getActualQohs() {
-    this.generalService.getActualQohs().subscribe((txqohs: TxQoh[]) => {
-      this.txqohs = txqohs;
+    this.generalService.getActualQohs().subscribe((txqohactual: TxQoh[]) => {
+      this.txqohactuals = txqohactual;
     }, error => {
       console.log(error);
     });
@@ -83,7 +83,7 @@ export class TxqohComponent implements OnInit {
 
   getTxQohs() {
     this.generalService.getTxQohs().subscribe((txqohs: TxQoh[]) => {
-      this.txqohs = txqohs;
+      this.txqohactuals = txqohs;
     }, error => {
       console.log(error);
     });

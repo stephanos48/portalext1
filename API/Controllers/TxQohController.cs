@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
@@ -20,7 +21,6 @@ namespace API.Controllers
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
-
         }
 
         [HttpGet("getTxQohs")]
@@ -37,10 +37,35 @@ namespace API.Controllers
         [HttpGet("getActualQohs")]
         public async Task<IActionResult> GetActualQohs()
         {
+            //List<TxQoh> txhold = new List<TxQoh>();
+            //List<PoPlan> pohold = new List<PoPlan>();
+            //List<SoPlan> sohold = new List<SoPlan>();
 
-            var txqohs = await _unitOfWork.ExtremeRepository.GetActualQohsAsync();
+            var txqohs = await _unitOfWork.ExtremeRepository.GetTxQohsAsync();
+            var poplans = await _unitOfWork.ExtremeRepository.GetPoPlansAsync();
+            var soplans = await _unitOfWork.ExtremeRepository.GetSoPlansAsync();
 
-            var txqohsToReturn = _mapper.Map<IEnumerable<TxQohForReturnDto>>(txqohs);
+            var startDate = DateTime.Parse("1/1/2021");
+            var query = from tx in txqohs
+                        join r in poplans.Where(a=>a.ReceiptDateTime >= startDate).Where(y=>y.PoOrderStatus == "Closed") on tx.Pn equals r.CustomerPn into g
+                        join ru in soplans.Where(a=>a.ShipDateTime >= startDate).Where(y=>y.ShipPlanStatus == "Closed") on tx.Pn equals ru.CustomerPn into gr
+                        orderby tx.Pn
+                        select new
+                        {
+                            Id = tx.TxQohId,
+                            Pn = tx.Pn,
+                            Customer = tx.Customer,
+                            Jan1Qoh = tx.Qoh,
+                            Jan1Rec = (int?)g.Select(x => x.ReceivedQty).DefaultIfEmpty(0).Sum(),
+                            Jan1Ship = (int?)gr.Select(x => x.ShipQty).DefaultIfEmpty(0).Sum(),
+                            Qoh = tx.Qoh + (int?)g.Select(x => x.ReceivedQty).DefaultIfEmpty(0).Sum() - (int?)gr.Select(x => x.ShipQty).DefaultIfEmpty(0).Sum(),
+                            Location = tx.Location,
+                            Notes = tx.Notes
+                        };
+
+                //List<TxQoh> txhold = new List<TxQoh>();
+
+            var txqohsToReturn = _mapper.Map<IEnumerable<TxQohForReturnDto>>(query);
 
             return Ok(txqohsToReturn);
         }

@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
@@ -39,45 +41,23 @@ namespace API.Data
             return txqohs;
         }
 
-        public async Task<IEnumerable<TxQoh>> GetActualQohsAsync()
+        public async Task<IEnumerable<SoPlan>> GetSoPlansAsync()
         {
-
-            var txqohs = await _context.TxQohs.ToListAsync();
-            return txqohs;
-            /*
-            var startDate = DateTime.Parse("1/1/2021");
-            var query = from tx in _context.TxQohs
-                        join r in _context.PoPlans.Where(a=>a.ReceiptDateTime >= startDate).Where(y=>y.PoOrderStatus == 5) on tx.Pn equals r.CustomerPn into g
-                        join r in _context.SoPlans.Where(a=>a.ShipDateTime >= startDate).Where(y=>y.ShipPlanStatus == 5) on tx.Pn equals r.CustomerPn into gr
-                        orderby tx.Pn
-                        select new
-                        {
-                            Id = tx.TxQohId,
-                            Pn = tx.Pn,
-                            Customer = tx.Customer,
-                            Jan1Qoh = tx.Qoh,
-                            Jan1Rec = (int?)g.Select(x => x.ReceivedQty).DefaultIfEmpty(0).Sum(),
-                            Jan1Ship = (int?)gr.Select(x => x.ShipQty).DefaultIfEmpty(0).Sum(),
-                            Qoh = tx.Qoh + (int?)g.Select(x => x.ReceivedQty).DefaultIfEmpty(0).Sum() - (int?)gr.Select(x => x.ShipQty).DefaultIfEmpty(0).Sum(),
-                            Location = tx.Location,
-                            Notes = tx.Notes
-                        };
-
-            //var txqohs = await _context.TxQohs.ToListAsync();
-            return query;
-            */
-        }
- 
-        public async Task<TxQoh> GetTxQoh(int id)
-        {
-            var specificpn = await _context.TxQohs.FirstOrDefaultAsync(m => m.TxQohId == id);
-            return specificpn;
+            var soplans = await _context.SoPlans.ToListAsync();
+            return soplans;
         }
 
         public async Task<IEnumerable<PoPlan>> GetPoPlansAsync()
         {
             var poplans = await _context.PoPlans.ToListAsync();
             return poplans;
+        }
+
+ 
+        public async Task<TxQoh> GetTxQoh(int id)
+        {
+            var specificpn = await _context.TxQohs.FirstOrDefaultAsync(m => m.TxQohId == id);
+            return specificpn;
         }
  
         public async Task<PoPlan> GetPoPlan(int id)
