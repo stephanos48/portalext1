@@ -12,7 +12,14 @@
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="customer" [(ngModel)]="model.customer" Placeholder="Customer">
+    <select type="text" class="form-control" required name="customer" [(ngModel)]="model.customer" placeholder="Customer">
+      <option value="">Select Customer</option>
+      <option value="1">Sertan</option>
+      <option value="2">DIP</option>
+      <option value="3">UH</option>
+      <option value="4">WB</option>
+      <option value="5">WQ</option>
+    </select>
   </div>
 
   <div class="form-group">
@@ -52,7 +59,7 @@
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="invNo" [(ngModel)]="model.invNo" Placeholder="InvNo">
+    <input type="text" class="form-control" name="invNumber" [(ngModel)]="model.invNumber" Placeholder="InvNumber">
   </div>
  
   <div class="form-group">
@@ -69,6 +76,7 @@
 
   <div class="form-group">
     <select type="text" class="form-control" required name="soOrderStatus" [(ngModel)]="model.soOrderStatus" placeholder="SoOrderStatus">
+      <option value="">Select Status</option>
       <option value="1">New</option>
       <option value="2">SoNotConfirmed</option>
       <option value="3">Open</option>
@@ -82,6 +90,7 @@
 
   <div class="form-group">
     <select type="text" class="form-control" required name="hotShipment" [(ngModel)]="model.hotShipment" placeholder="HotShipment">
+      <option value="">Hot Shipment?</option>
       <option value="1">Yes</option>
       <option value="2">No</option>
     </select>

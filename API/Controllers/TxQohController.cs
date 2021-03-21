@@ -49,7 +49,7 @@ namespace API.Controllers
             var query = from tx in txqohs
                         join r in poplans.Where(a=>a.ReceiptDateTime >= startDate).Where(y=>y.PoOrderStatus == "Closed/Received") on tx.Pn equals r.CustomerPn into g
                         join ru in soplans.Where(a=>a.ShipDateTime >= startDate).Where(y=>y.ShipPlanStatus == "Closed/Shipped") on tx.Pn equals ru.CustomerPn into gr
-                        orderby tx.Pn
+                        orderby tx.Pn                        
                         select new
                         {
                             Id = tx.TxQohId,
