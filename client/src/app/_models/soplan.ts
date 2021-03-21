@@ -17,7 +17,7 @@ export interface SoPlan {
     promiseDateTime: Date;
     shipDateTime: Date;
     soOrderStatus: string;
-    hotShipment: boolean;
+    hotShipment: string;
     carrier: string;
     trackingInfo: string;
     shipToAddress: string;

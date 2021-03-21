@@ -29,6 +29,9 @@ namespace API.Helpers
             CreateMap<PoPlanForCreationDto, PoPlan>();
             CreateMap<PoPlanForReturnDto, PoPlan>().ReverseMap();
             CreateMap<PoPlanForUpdateDto, PoPlan>();
+            CreateMap<SoPlanForCreationDto, SoPlan>();
+            CreateMap<SoPlanForReturnDto, SoPlan>().ReverseMap();
+            CreateMap<SoPlanForUpdateDto, SoPlan>();
         }
 
     }

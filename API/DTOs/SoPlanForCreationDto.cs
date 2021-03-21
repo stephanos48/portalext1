@@ -58,7 +58,7 @@ namespace API.DTOs
 
         public string SoOrderStatus { get; set; }
 
-        public bool HotShipment { get; set; }
+        public string HotShipment { get; set; }
 
         public string Carrier { get; set; }
 

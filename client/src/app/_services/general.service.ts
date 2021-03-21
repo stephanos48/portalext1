@@ -54,26 +54,12 @@ export class GeneralService {
     return this.http.post(this.baseUrl + 'txqoh/' + id, txqoh);
   }
 
-
-
   getPoPlans() {
     return this.http.get(this.baseUrl + 'poplans/getPoPlans');
   }
 
-  updatePoPlan(id: number, poplan: PoPlan) {
-    return this.http.put(this.baseUrl + 'poplans/' + id, poplan);
-  }
-
-  updateSoPlan(id: number, soplan: SoPlan) {
-    return this.http.put(this.baseUrl + 'soplans/' + id, soplan);
-  }
-
   createPoPlan(poplan: PoPlan) {
     return this.http.post(this.baseUrl + 'poplans/createPoPlan', poplan);
-  }
-
-  createSoPlan(soplan: SoPlan) {
-    return this.http.post(this.baseUrl + 'soplans/createSoPlan', soplan);
   }
 
   getPoPlan(id): Observable<PoPlan> {
@@ -84,6 +70,30 @@ export class GeneralService {
     return this.http.post(this.baseUrl + 'poplans/' + id, poplan);
   }
 
+  updatePoPlan(id: number, poplan: PoPlan) {
+    return this.http.put(this.baseUrl + 'poplans/' + id, poplan);
+  }
+
+
+  getSoPlans() {
+    return this.http.get(this.baseUrl + 'soplans/getSoPlans');
+  }
+
+  getSoPlan(id): Observable<SoPlan> {
+    return this.http.get<SoPlan>(this.baseUrl + 'soplans/' + id);
+  }
+
+  updateSoPlan(id: number, soplan: SoPlan) {
+    return this.http.put(this.baseUrl + 'soplans/' + id, soplan);
+  }
+
+  createSoPlan(soplan: SoPlan) {
+    return this.http.post(this.baseUrl + 'soplans/createSoPlan', soplan);
+  }
+
+  deleteSoPlan(id: number, soplan: SoPlan) {
+    return this.http.post(this.baseUrl + 'soplans/' + id, soplan);
+  }
   
 
 }

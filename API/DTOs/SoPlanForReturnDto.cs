@@ -19,8 +19,8 @@ namespace API.DTOs
         public string CustomerOrderNumber { get; set; }
 
         [Display(Name = "Customer PO Line")]
-        public string customerPoLine { get; set; }
-        public string Invoice { get; set; }
+        public string CustomerPoLine { get; set; }
+        public string InvNumber { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -58,7 +58,7 @@ namespace API.DTOs
 
         public string SoOrderStatus { get; set; }
 
-        public bool HotShipment { get; set; }
+        public string HotShipment { get; set; }
 
         public string Carrier { get; set; }
 

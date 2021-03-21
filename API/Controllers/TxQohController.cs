@@ -47,8 +47,8 @@ namespace API.Controllers
 
             var startDate = DateTime.Parse("1/1/2021");
             var query = from tx in txqohs
-                        join r in poplans.Where(a=>a.ReceiptDateTime >= startDate).Where(y=>y.PoOrderStatus == "Closed") on tx.Pn equals r.CustomerPn into g
-                        join ru in soplans.Where(a=>a.ShipDateTime >= startDate).Where(y=>y.ShipPlanStatus == "Closed") on tx.Pn equals ru.CustomerPn into gr
+                        join r in poplans.Where(a=>a.ReceiptDateTime >= startDate).Where(y=>y.PoOrderStatus == "Closed/Received") on tx.Pn equals r.CustomerPn into g
+                        join ru in soplans.Where(a=>a.ShipDateTime >= startDate).Where(y=>y.ShipPlanStatus == "Closed/Shipped") on tx.Pn equals ru.CustomerPn into gr
                         orderby tx.Pn
                         select new
                         {
@@ -65,7 +65,7 @@ namespace API.Controllers
 
                 //List<TxQoh> txhold = new List<TxQoh>();
 
-            var txqohsToReturn = _mapper.Map<IEnumerable<TxQohForReturnDto>>(query);
+            var txqohsToReturn = query;
 
             return Ok(txqohsToReturn);
         }
