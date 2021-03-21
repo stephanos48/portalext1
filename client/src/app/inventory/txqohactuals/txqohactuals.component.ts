@@ -33,8 +33,6 @@ export class TxqohactualsComponent implements OnInit {
   baseUrl = environment.apiUrl;
   txqohactuals: TxQohActual[];
   txqohactual: TxQohActual = JSON.parse(localStorage.getItem('txqohactual'));
-  txqohs: TxQoh[];
-  txqoh: TxQoh = JSON.parse(localStorage.getItem('txqoh'));
   createForm: FormGroup;
   bsConfig: Partial<BsDatepickerConfig>;
   createMode = false;
@@ -46,7 +44,7 @@ export class TxqohactualsComponent implements OnInit {
     private route: ActivatedRoute, private modalService: BsModalService) { }
 
   ngOnInit(): void {
-    this.getTxQohs();
+    this.getActualQohs();
 
     this.bsConfig = {
       containerClass: 'theme-red'
@@ -62,17 +60,10 @@ export class TxqohactualsComponent implements OnInit {
     });
   }
 
-  getTxQohs() {
-    this.generalService.getTxQohs().subscribe((txqohs: TxQohActual[]) => {
-      this.txqohactuals = txqohs;
-    }, error => {
-      console.log(error);
-    });
-  }
 
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
-    this.getTxQohs();
+    this.getActualQohs();
   }
 /*
   resetFilters() {

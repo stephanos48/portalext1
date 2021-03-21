@@ -31,8 +31,6 @@ import { TxQoh } from 'src/app/_models/txqoh';
 export class TxqohComponent implements OnInit {
   @Output() cancelCreate = new EventEmitter();
   baseUrl = environment.apiUrl;
-  txqohactuals: TxQohActual[];
-  txqohactual: TxQohActual = JSON.parse(localStorage.getItem('txqohactual'));
   txqohs: TxQoh[];
   txqoh: TxQoh = JSON.parse(localStorage.getItem('txqoh'));
   createForm: FormGroup;
@@ -74,14 +72,6 @@ export class TxqohComponent implements OnInit {
     this.bsConfig = {
       containerClass: 'theme-red'
     };
-  }
-
-  getActualQohs() {
-    this.generalService.getActualQohs().subscribe((txqohactual: TxQohActual[]) => {
-      this.txqohactuals = txqohactual;
-    }, error => {
-      console.log(error);
-    });
   }
 
   getTxQohs() {
