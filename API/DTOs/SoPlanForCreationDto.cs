@@ -1,65 +1,64 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace API.Entities
+namespace API.DTOs
 {
-    public class SoPlan
+    public class SoPlanForCreationDto
     {
-        public int SoPlanId { get; set; }
+       public int SoPlanId { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Order Date")]
-        public DateTime? OrderDateTime { get; set; }
+        [Display(Name = "Extreme SO")]
+        public string SoNumber { get; set; }
+
+        [Display(Name = "SO Line")]
+        public string SoLine { get; set; }
 
         public string Customer { get; set; }
 
-        [Required]
-        [Display(Name = "Customer PO")]
-        public string CustomerOrderNo { get; set; }
+        [Display(Name = "CustomerPo")]
+        public string CustomerOrderNumber { get; set; }
 
         [Display(Name = "Customer PO Line")]
-        public string CustomerOrderLine { get; set; }
+        public string customerPoLine { get; set; }
+        public string Invoice { get; set; }
 
-        [Display(Name = "Ext SO")]
-        public string SoNumber { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "OrderDate")]
+        public DateTime? OrderDateTime { get; set; }
 
-        [Display(Name = "Ext WO")]
-        public string WoNumber { get; set; }
-
-        [Display(Name = "Customer PN")]
+        [Display(Name = "CustomerPn")]
         public string CustomerPn { get; set; }
 
-        [Display(Name = "Extreme PN")]
+        [Display(Name = "ExtremePn")]
         public string ExtremePn { get; set; }
 
         public string PartDescription { get; set; }
+        public string WorkOrderNumber { get; set; }
 
-        [Display(Name = "Order Qty")]
+        [Display(Name = "OrderQty")]
         public int OrderQty { get; set; }
 
-        [Display(Name = "Ship Qty")]
+        [Display(Name = "ShipQty")]
         public int? ShipQty { get; set; }
-
-        public string InvNumber { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? RequestedDateTime { get; set; }
 
+        [Display(Name = "PromiseDate")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? PromiseDateTime { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "ShipDate")]
         public DateTime? ShipDateTime { get; set; }
 
-        [Display(Name = "Status")]
-        public string ShipPlanStatus { get; set; }
+        public string SoOrderStatus { get; set; }
 
-        [Display(Name = "HOT")]
-        public string HotShipment { get; set; }
+        public bool HotShipment { get; set; }
 
         public string Carrier { get; set; }
 
@@ -68,6 +67,5 @@ namespace API.Entities
         public string ShipToAddress { get; set; }
 
         public string Notes { get; set; }
-
     }
 }

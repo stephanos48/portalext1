@@ -42,10 +42,17 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { TxqohCreateComponent } from './inventory/txqoh-create/txqoh-create.component';
 import { TxqohEditComponent } from './inventory/txqoh-edit/txqoh-edit.component';
 import { TxqohModalComponent } from './inventory/txqoh-modal/txqoh-modal.component';
-import { SupplychainComponent } from './supplychain/supplychain/supplychain.component';
 import { PurchaseordersComponent } from './supplychain/purchaseorders/purchaseorders.component';
 import { PoplanModalComponent } from './supplychain/poplan-modal/poplan-modal.component';
 import { PoplanCreateComponent } from './supplychain/poplan-create/poplan-create.component';
+import { SalesComponent } from './sales/sales.component';
+import { ShipoutsComponent } from './sales/shipouts/shipouts.component';
+import { SalesCreateComponent } from './sales/sales-create/sales-create.component';
+import { SertanComponent } from './sales/sertan/sertan.component';
+import { SoplanModalComponent } from './sales/soplan-modal/soplan-modal.component';
+import { TxqohactualsComponent } from './inventory/txqohactuals/txqohactuals.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { SupplychainComponent } from './supplychain/supplychain.component';
 
 
 @NgModule({
@@ -78,10 +85,17 @@ import { PoplanCreateComponent } from './supplychain/poplan-create/poplan-create
     TxqohCreateComponent,
     TxqohEditComponent,
     TxqohModalComponent,
-    SupplychainComponent,
     PurchaseordersComponent,
     PoplanModalComponent,
-    PoplanCreateComponent
+    PoplanCreateComponent,
+    SalesComponent,
+    ShipoutsComponent,
+    SalesCreateComponent,
+    SertanComponent,
+    SoplanModalComponent,
+    TxqohactualsComponent,
+    InventoryComponent,
+    SupplychainComponent
     
   ],
   imports: [

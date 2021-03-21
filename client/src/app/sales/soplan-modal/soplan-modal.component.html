@@ -1,0 +1,119 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Edit Qoh: {{soplan?.soNumber}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form #soPlanForm="ngForm" id="soPlanForm">
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="orderDateTime" [(ngModel)]="soplan.orderDateTime" Placeholder="OrderDateTime" bsDatepicker [bsConfig]="bsConfig">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="soLine" [(ngModel)]="soplan.soLine" Placeholder="SoLine">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="customer" [(ngModel)]="soplan.customer" Placeholder="Customer">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="customerOrderNumber" [(ngModel)]="soplan.customerOrderNumber" Placeholder="CustomerOrderNumber">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="customerOrderLine" [(ngModel)]="soplan.customerOrderLine" Placeholder="CustomerOrderLine">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="soNumber" [(ngModel)]="soplan.soNumber" Placeholder="SoNumber">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="workOrderNumber" [(ngModel)]="soplan.workOrderNumber" Placeholder="WorkOrderNumber">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="customerPn" [(ngModel)]="soplan.customerPn" Placeholder="CustomerPn">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="extremePn" [(ngModel)]="soplan.extremePn" Placeholder="ExtremePn">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="partDescription" [(ngModel)]="soplan.partDescription" Placeholder="PartDescription">
+          </div>
+        
+          <div class="form-group">
+            <input type="number" class="form-control" name="orderQty" [(ngModel)]="soplan.orderQty" Placeholder="OrderQty">
+          </div>
+        
+          <div class="form-group">
+            <input type="number" class="form-control" name="shipQty" [(ngModel)]="soplan.shipQty" Placeholder="ShipQty">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="invNumber" [(ngModel)]="soplan.invNumber" Placeholder="InvNumber">
+          </div>
+         
+          <div class="form-group">
+            <input type="text" class="form-control" name="requestDateTime" [(ngModel)]="soplan.requestedDateTime" Placeholder="RequestDateTime" bsDatepicker [bsConfig]="bsConfig">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="promiseDateTime" [(ngModel)]="soplan.promiseDateTime" Placeholder="PromiseDateTime" bsDatepicker [bsConfig]="bsConfig">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="shipDateTime" [(ngModel)]="soplan.shipDateTime" Placeholder="ShipDateTime" bsDatepicker [bsConfig]="bsConfig">
+          </div>
+        
+          <div class="form-group">
+            <select type="text" class="form-control" required name="soOrderStatus" [(ngModel)]="soplan.soOrderStatus" placeholder="SoOrderStatus">
+              <option value="1">New</option>
+              <option value="2">SoNotConfirmed</option>
+              <option value="3">Open</option>
+              <option value="4">Slotted</option>
+              <option value="5">Closed/Shipped</option>
+              <option value="6">Closed/Canceled</option>
+              <option value="7">OrderToCancel</option>
+              <option value="8">Issue</option>
+            </select>
+          </div>
+          <!--
+          <div class="form-group">
+            <input type="text" class="form-control" name="soOrderStatus" [(ngModel)]="soplan.soOrderStatus" Placeholder="SoOrderStatus">
+          </div>
+          -->
+          <div class="form-group">
+            <select type="text" class="form-control" required name="hotShipment" [(ngModel)]="soplan.hotShipment" placeholder="HotShipment">
+              <option value="1">Yes</option>
+              <option value="2">No</option>
+            </select>
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="carrier" [(ngModel)]="soplan.carrier" Placeholder="Carrier">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="trackingInfo" [(ngModel)]="soplan.trackingInfo" Placeholder="TrackingInfo">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="shipToAddress" [(ngModel)]="soplan.shipToAddress" Placeholder="ShipToAddress">
+          </div>
+        
+          <div class="form-group">
+            <input type="text" class="form-control" name="notes" [(ngModel)]="soplan.notes" Placeholder="Notes">
+          </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Cancel</button>
+  <button type="button" class="btn btn-success" (click)="updateSoPlan()" form="soPlanForm">Submit</button>
+</div>

@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { PoPlan } from '../_models/poplan';
+import { SoPlan } from '../_models/soplan';
 import { TxQoh } from '../_models/txqoh';
 
 @Injectable({
@@ -63,8 +64,16 @@ export class GeneralService {
     return this.http.put(this.baseUrl + 'poplans/' + id, poplan);
   }
 
+  updateSoPlan(id: number, soplan: SoPlan) {
+    return this.http.put(this.baseUrl + 'soplans/' + id, soplan);
+  }
+
   createPoPlan(poplan: PoPlan) {
     return this.http.post(this.baseUrl + 'poplans/createPoPlan', poplan);
+  }
+
+  createSoPlan(soplan: SoPlan) {
+    return this.http.post(this.baseUrl + 'soplans/createSoPlan', soplan);
   }
 
   getPoPlan(id): Observable<PoPlan> {

@@ -66,6 +66,12 @@ namespace API.Data
             return poplanspecific;
         }
 
+        public async Task<SoPlan> GetSoPlan(int id)
+        {
+            var soplanspecific = await _context.SoPlans.FirstOrDefaultAsync(m => m.SoPlanId == id);
+            return soplanspecific;
+        }
+
         public async Task<bool> SaveChangesAsync()
         {
             return (await _context.SaveChangesAsync()) > 0;

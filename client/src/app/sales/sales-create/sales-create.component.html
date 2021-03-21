@@ -1,0 +1,112 @@
+<h2 class="text-center text-primary">Create a new Sales Order</h2>
+<hr>
+
+<form #createForm="ngForm" (ngSubmit)="create()">
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="orderDateTime" [(ngModel)]="model.orderDateTime" Placeholder="OrderDateTime" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="soLine" [(ngModel)]="model.soLine" Placeholder="SoLine">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="customer" [(ngModel)]="model.customer" Placeholder="Customer">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="customerOrderNumber" [(ngModel)]="model.customerOrderNumber" Placeholder="CustomerOrderNumber">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="customerOrderLine" [(ngModel)]="model.customerOrderLine" Placeholder="CustomerOrderLine">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="soNumber" [(ngModel)]="model.soNumber" Placeholder="SoNumber">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="woNumber" [(ngModel)]="model.woNumber" Placeholder="WoNumber">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="customerPn" [(ngModel)]="model.customerPn" Placeholder="CustomerPn">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="extremePn" [(ngModel)]="model.extremePn" Placeholder="ExtremePn">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="partDescription" [(ngModel)]="model.partDescription" Placeholder="PartDescription">
+  </div>
+
+  <div class="form-group">
+    <input type="number" class="form-control" name="orderQty" [(ngModel)]="model.orderQty" Placeholder="OrderQty">
+  </div>
+
+  <div class="form-group">
+    <input type="number" class="form-control" name="shipQty" [(ngModel)]="model.shipQty" Placeholder="ShipQty">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="invNo" [(ngModel)]="model.invNo" Placeholder="InvNo">
+  </div>
+ 
+  <div class="form-group">
+    <input type="text" class="form-control" name="requestDateTime" [(ngModel)]="model.requestedDateTime" Placeholder="RequestDateTime" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="promiseDateTime" [(ngModel)]="model.promiseDateTime" Placeholder="PromiseDateTime" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="shipDateTime" [(ngModel)]="model.shipDateTime" Placeholder="ShipDateTime" bsDatepicker [bsConfig]="bsConfig">
+  </div>
+
+  <div class="form-group">
+    <select type="text" class="form-control" required name="soOrderStatus" [(ngModel)]="model.soOrderStatus" placeholder="SoOrderStatus">
+      <option value="1">New</option>
+      <option value="2">SoNotConfirmed</option>
+      <option value="3">Open</option>
+      <option value="4">Slotted</option>
+      <option value="5">Closed/Shipped</option>
+      <option value="6">Closed/Canceled</option>
+      <option value="7">OrderToCancel</option>
+      <option value="8">Issue</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <select type="text" class="form-control" required name="hotShipment" [(ngModel)]="model.hotShipment" placeholder="HotShipment">
+      <option value="1">Yes</option>
+      <option value="2">No</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="carrier" [(ngModel)]="model.carrier" Placeholder="Carrier">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="trackingInfo" [(ngModel)]="model.trackingInfo" Placeholder="TrackingInfo">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="shipToAddress" [(ngModel)]="model.shipToAddress" Placeholder="ShipToAddress">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="notes" [(ngModel)]="model.notes" Placeholder="Notes">
+  </div>
+
+<div class="form-group text-center">
+  <button class="btn btn-success" [disabled]="!createForm.valid" type="submit">Create</button>
+  <button class="btn btn-default" type="button" (click)="cancel()" >Cancel</button>
+</div>
+
+</form>
+

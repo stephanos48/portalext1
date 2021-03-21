@@ -16,7 +16,7 @@ namespace API.Interfaces
 
         Task<IEnumerable<PoPlan>> GetPoPlansAsync();
         Task<PoPlan> GetPoPlan(int id);
-
+        Task<SoPlan> GetSoPlan(int id);
         Task<bool> SaveChangesAsync();
 
         Task<IEnumerable<SoPlan>> GetSoPlansAsync();

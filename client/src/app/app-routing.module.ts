@@ -21,6 +21,13 @@ import { TxqohModalComponent } from './inventory/txqoh-modal/txqoh-modal.compone
 import { PurchaseordersComponent } from './supplychain/purchaseorders/purchaseorders.component';
 import { PoplanCreateComponent } from './supplychain/poplan-create/poplan-create.component';
 import { PoplanModalComponent } from './supplychain/poplan-modal/poplan-modal.component';
+import { SalesComponent } from './sales/sales.component';
+import { SalesCreateComponent } from './sales/sales-create/sales-create.component';
+import { SoplanModalComponent } from './sales/soplan-modal/soplan-modal.component';
+import { ShipoutsComponent } from './sales/shipouts/shipouts.component';
+import { SertanComponent } from './sales/sertan/sertan.component';
+import { TxqohactualsComponent } from './inventory/txqohactuals/txqohactuals.component';
+import { InventoryComponent } from './inventory/inventory.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -31,7 +38,9 @@ const routes: Routes = [
     children: [
       {path: 'members', component: MemberListComponent},
       {path: 'landing', component: LandingComponent},
+      {path: 'inventory', component: InventoryComponent},
       {path: 'txqoh', component: TxqohComponent},
+      {path: 'txqohactuals', component: TxqohactualsComponent},
       {path: 'txqoh-modal', component: TxqohModalComponent},      
       {path: 'txqoh-create', component: TxqohCreateComponent},
       {path: 'members/:username', component: MemberDetailComponent, resolve: {member: MemberDetailedResolver}},
@@ -41,6 +50,11 @@ const routes: Routes = [
       {path: 'purchaseorders', component: PurchaseordersComponent},
       {path: 'poplan-create', component: PoplanCreateComponent},
       {path: 'poplan-modal', component: PoplanModalComponent},
+      {path: 'sales', component: SalesComponent},
+      {path: 'sales-create', component: SalesCreateComponent},
+      {path: 'soplan-modal', component: SoplanModalComponent},
+      {path: 'shipouts', component: ShipoutsComponent},
+      {path: 'sertan', component: SertanComponent},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
 
     ]

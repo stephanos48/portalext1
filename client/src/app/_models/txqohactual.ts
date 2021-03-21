@@ -1,4 +1,4 @@
-export interface TxQoh {
+export interface TxQohActual {
     txQohId: number;
     pn: string;
     partDescription: string;
