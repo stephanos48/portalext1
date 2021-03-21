@@ -53,6 +53,7 @@ import { SoplanModalComponent } from './sales/soplan-modal/soplan-modal.componen
 import { TxqohactualsComponent } from './inventory/txqohactuals/txqohactuals.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { SupplychainComponent } from './supplychain/supplychain.component';
+import { SalesListComponent } from './sales/sales-list/sales-list.component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { SupplychainComponent } from './supplychain/supplychain.component';
     SoplanModalComponent,
     TxqohactualsComponent,
     InventoryComponent,
-    SupplychainComponent
+    SupplychainComponent,
+    SalesListComponent
     
   ],
   imports: [

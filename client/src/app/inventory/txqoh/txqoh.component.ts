@@ -85,8 +85,8 @@ export class TxqohComponent implements OnInit {
   }
 
   getTxQohs() {
-    this.generalService.getTxQohs().subscribe((txqohs: TxQohActual[]) => {
-      this.txqohactuals = txqohs;
+    this.generalService.getTxQohs().subscribe((txqohs: TxQoh[]) => {
+      this.txqohs = txqohs;
     }, error => {
       console.log(error);
     });

@@ -52,6 +52,7 @@ const routes: Routes = [
       {path: 'poplan-modal', component: PoplanModalComponent},
       {path: 'sales', component: SalesComponent},
       {path: 'sales-create', component: SalesCreateComponent},
+      {path: 'sales-list', component: SalesCreateComponent},
       {path: 'soplan-modal', component: SoplanModalComponent},
       {path: 'shipouts', component: ShipoutsComponent},
       {path: 'sertan', component: SertanComponent},

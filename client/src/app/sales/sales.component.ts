@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sales.component.css']
 })
 export class SalesComponent implements OnInit {
-
+  jap: any = '../assets/img/jap.jpg';
+  
   constructor() { }
 
   ngOnInit(): void {
