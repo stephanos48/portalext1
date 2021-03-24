@@ -54,6 +54,7 @@ export class GeneralService {
   deleteTxQoh(id: number) {
     return this.http.delete(this.baseUrl + 'txqoh/deletePn' + id);
   }
+  
 
   getPoPlans() {
     return this.http.get(this.baseUrl + 'poplans/getPoPlans');

@@ -10,19 +10,20 @@ namespace API.Interfaces
         void Add<T>(T entity) where T: class;
         void Delete<T>(T entity) where T: class;
         Task<bool> SaveAll();
+        Task<bool> SaveChangesAsync();
+
 
         Task<IEnumerable<TxQoh>> GetTxQohsAsync();
         Task<TxQoh> GetTxQoh(int id);
 
         Task<IEnumerable<PoPlan>> GetPoPlansAsync();
         Task<IEnumerable<PoPlan>> GetNotReceived();
-        Task<IEnumerable<SoPlan>> GetShipOuts();
         Task<IEnumerable<PoPlan>> GetTransit();
         Task<IEnumerable<PoPlan>> GetReceived();
         Task<PoPlan> GetPoPlan(int id);
-        Task<SoPlan> GetSoPlan(int id);
-        Task<bool> SaveChangesAsync();
 
-        Task<IEnumerable<SoPlan>> GetSoPlansAsync();
+        Task<IEnumerable<SoPlan>> GetSoPlansAsync();        
+        Task<IEnumerable<SoPlan>> GetShipOuts();
+        Task<SoPlan> GetSoPlan(int id);
     }
 }

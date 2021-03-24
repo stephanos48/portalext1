@@ -34,7 +34,7 @@ namespace API.Controllers
 
             var soplansToReturn = _mapper.Map<IEnumerable<SoPlanForReturnDto>>(soplans);
 
-            return Ok(soplansToReturn.OrderBy(m=>m.ShipDateTime));
+            return Ok(soplansToReturn.OrderByDescending(m=>m.ShipDateTime));
 
         }
 
@@ -55,7 +55,7 @@ namespace API.Controllers
         {
             var soplanFromRepo = await _unitOfWork.ExtremeRepository.GetSoPlan(id);
 
-            var soplanToReturn = _mapper.Map<PoPlanForReturnDto>(soplanFromRepo);
+            var soplanToReturn = _mapper.Map<SoPlanForReturnDto>(soplanFromRepo);
 
             return Ok(soplanToReturn);
         }
