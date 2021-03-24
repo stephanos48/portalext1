@@ -37,6 +37,18 @@ namespace API.Controllers
             return Ok(soplansToReturn.OrderBy(m=>m.ShipDateTime));
 
         }
+
+        [HttpGet("getShipOuts")]
+        public async Task<IActionResult> GetShipOuts()
+        {
+
+            var soplans = await _unitOfWork.ExtremeRepository.GetShipOuts();
+
+            var soplansToReturn = _mapper.Map<IEnumerable<SoPlanForReturnDto>>(soplans);
+
+            return Ok(soplansToReturn.OrderByDescending(m=>m.ShipDateTime));
+
+        }
       
         [HttpGet("{id}", Name = "getSoPlan")]
         public async Task<IActionResult> GetSoPlan(int id)

@@ -87,6 +87,10 @@ export class GeneralService {
   }
 
 
+  getShipOuts() {
+    return this.http.get(this.baseUrl + 'soplans/getShipOuts');
+  }
+
   getSoPlans() {
     return this.http.get(this.baseUrl + 'soplans/getSoPlans');
   }

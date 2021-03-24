@@ -28,7 +28,7 @@ export class SalesCreateComponent implements OnInit {
     }, error => {
       this.Toastr.error(error);
     }, () => {
-      this.router.navigate(['/landing']);
+      this.router.navigate(['/sales']);
     });
   }
 

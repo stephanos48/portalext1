@@ -47,12 +47,18 @@ namespace API.Data
             return soplans;
         }
 
+        public async Task<IEnumerable<SoPlan>> GetShipOuts()
+        {
+            var soplans = await _context.SoPlans.Where(x=>x.ShipPlanStatus == "Closed/Shipped").ToListAsync();
+            return soplans;
+        }
+
         public async Task<IEnumerable<PoPlan>> GetPoPlansAsync()
         {
             var poplans = await _context.PoPlans.ToListAsync();
             return poplans;
         }
-        
+
         public async Task<IEnumerable<PoPlan>> GetNotReceived()
         {
             var poplans = await _context.PoPlans.Where(x=>x.PoOrderStatus != "Closed/Received").Where(y=>y.PoOrderStatus != "Transit").ToListAsync();

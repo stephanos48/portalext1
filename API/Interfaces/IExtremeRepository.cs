@@ -16,6 +16,7 @@ namespace API.Interfaces
 
         Task<IEnumerable<PoPlan>> GetPoPlansAsync();
         Task<IEnumerable<PoPlan>> GetNotReceived();
+        Task<IEnumerable<SoPlan>> GetShipOuts();
         Task<IEnumerable<PoPlan>> GetTransit();
         Task<IEnumerable<PoPlan>> GetReceived();
         Task<PoPlan> GetPoPlan(int id);
