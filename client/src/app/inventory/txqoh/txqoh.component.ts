@@ -148,6 +148,8 @@ export class TxqohComponent implements OnInit {
     }
   }
 
+
+
   /*
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;

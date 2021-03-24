@@ -37,6 +37,42 @@ namespace API.Controllers
             return Ok(poplansToReturn.OrderBy(m=>m.EtaDateTime));
 
         }
+
+        [HttpGet("getNotReceived")]
+        public async Task<IActionResult> GetNotReceived()
+        {
+
+            var poplans = await _unitOfWork.ExtremeRepository.GetNotReceived();
+
+            var poplansToReturn = _mapper.Map<IEnumerable<PoPlanForReturnDto>>(poplans);
+
+            return Ok(poplansToReturn.OrderBy(m=>m.EtaDateTime));
+
+        }
+
+        [HttpGet("getReceived")]
+        public async Task<IActionResult> GetReceived()
+        {
+
+            var poplans = await _unitOfWork.ExtremeRepository.GetReceived();
+
+            var poplansToReturn = _mapper.Map<IEnumerable<PoPlanForReturnDto>>(poplans);
+
+            return Ok(poplansToReturn.OrderBy(m=>m.EtaDateTime));
+
+        }
+
+        [HttpGet("getTransit")]
+        public async Task<IActionResult> GetTransit()
+        {
+
+            var poplans = await _unitOfWork.ExtremeRepository.GetTransit();
+
+            var poplansToReturn = _mapper.Map<IEnumerable<PoPlanForReturnDto>>(poplans);
+
+            return Ok(poplansToReturn.OrderBy(m=>m.EtaDateTime));
+
+        }
       
         [HttpGet("{id}", Name = "getPoPlan")]
         public async Task<IActionResult> GetPoPlan(int id)

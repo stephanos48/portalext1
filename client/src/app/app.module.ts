@@ -54,6 +54,8 @@ import { TxqohactualsComponent } from './inventory/txqohactuals/txqohactuals.com
 import { InventoryComponent } from './inventory/inventory.component';
 import { SupplychainComponent } from './supplychain/supplychain.component';
 import { SalesListComponent } from './sales/sales-list/sales-list.component';
+import { TransitComponent } from './supplychain/transit/transit.component';
+import { ReceivedComponent } from './supplychain/received/received.component';
 
 
 @NgModule({
@@ -97,7 +99,9 @@ import { SalesListComponent } from './sales/sales-list/sales-list.component';
     TxqohactualsComponent,
     InventoryComponent,
     SupplychainComponent,
-    SalesListComponent
+    SalesListComponent,
+    TransitComponent,
+    ReceivedComponent
     
   ],
   imports: [

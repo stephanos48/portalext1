@@ -12,11 +12,11 @@ import { environment } from 'src/environments/environment';
 import { PoplanModalComponent } from '../poplan-modal/poplan-modal.component';
 
 @Component({
-  selector: 'app-purchaseorders',
-  templateUrl: './purchaseorders.component.html',
-  styleUrls: ['./purchaseorders.component.css']
+  selector: 'app-received',
+  templateUrl: './received.component.html',
+  styleUrls: ['./received.component.css']
 })
-export class PurchaseordersComponent implements OnInit {
+export class ReceivedComponent implements OnInit {
   @Output() cancelCreate = new EventEmitter();
   baseUrl = environment.apiUrl;
   poplans: PoPlan[];
@@ -31,23 +31,16 @@ export class PurchaseordersComponent implements OnInit {
     private route: ActivatedRoute, private modalService: BsModalService) { }
 
   ngOnInit(): void {
-    this.getNotReceived();
+    this.getReceived();
 
     this.bsConfig = {
       containerClass: 'theme-red'
     };
   }
 
-  getPoPlans() {
-    this.generalService.getPoPlans().subscribe((poplans: PoPlan[]) => {
-      this.poplans = poplans;
-    }, error => {
-      console.log(error);
-    });
-  }
 
-  getNotReceived() {
-    this.generalService.getNotReceived().subscribe((poplans: PoPlan[]) => {
+  getReceived() {
+    this.generalService.getReceived().subscribe((poplans: PoPlan[]) => {
       this.poplans = poplans;
     }, error => {
       console.log(error);
@@ -56,7 +49,7 @@ export class PurchaseordersComponent implements OnInit {
 
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
-    this.getNotReceived();
+    this.getReceived();
   }
 
   createToggle() {
@@ -83,6 +76,5 @@ export class PurchaseordersComponent implements OnInit {
         console.log(error);
       });
     }
-
 
 }

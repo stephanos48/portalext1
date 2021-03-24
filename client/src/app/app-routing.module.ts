@@ -28,6 +28,8 @@ import { ShipoutsComponent } from './sales/shipouts/shipouts.component';
 import { SertanComponent } from './sales/sertan/sertan.component';
 import { TxqohactualsComponent } from './inventory/txqohactuals/txqohactuals.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { ReceivedComponent } from './supplychain/received/received.component';
+import { TransitComponent } from './supplychain/transit/transit.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -49,6 +51,8 @@ const routes: Routes = [
       {path: 'messages', component: MessagesComponent},
       {path: 'purchaseorders', component: PurchaseordersComponent},
       {path: 'poplan-create', component: PoplanCreateComponent},
+      {path: 'received', component: ReceivedComponent},
+      {path: 'transit', component: TransitComponent},
       {path: 'poplan-modal', component: PoplanModalComponent},
       {path: 'sales', component: SalesComponent},
       {path: 'sales-create', component: SalesCreateComponent},

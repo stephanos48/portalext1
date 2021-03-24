@@ -50,12 +50,24 @@ export class GeneralService {
     return this.http.get<TxQoh>(this.baseUrl + 'txqoh/' + id);
   }
 
-  deleteTxQoh(id: number, txqoh: TxQoh) {
-    return this.http.post(this.baseUrl + 'txqoh/' + id, txqoh);
+  deleteTxQoh(id: number) {
+    return this.http.delete(this.baseUrl + 'txqoh/deletePn' + id);
   }
 
   getPoPlans() {
     return this.http.get(this.baseUrl + 'poplans/getPoPlans');
+  }
+
+  getNotReceived() {
+    return this.http.get(this.baseUrl + 'poplans/getNotReceived');
+  }
+
+  getReceived() {
+    return this.http.get(this.baseUrl + 'poplans/getReceived');
+  }
+
+  getTransit() {
+    return this.http.get(this.baseUrl + 'poplans/getTransit');
   }
 
   createPoPlan(poplan: PoPlan) {

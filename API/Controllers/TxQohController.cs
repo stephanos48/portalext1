@@ -172,10 +172,16 @@ namespace API.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPost("{id}", Name = "deletePn")]
+        public async Task<IActionResult> DeletePn(int id)
         {
+            var txqohToDelete = await _unitOfWork.ExtremeRepository.GetTxQoh(id);
+            _unitOfWork.ExtremeRepository.Delete(txqohToDelete);
 
+            if(await _unitOfWork.ExtremeRepository.SaveAll())
+                return NoContent();
+
+            throw new Exception("Error deleting the PN");
         }
     }
 }
