@@ -35,28 +35,37 @@ namespace API.Data
             return await _context.SaveChangesAsync() > 0;
         }
 
+        public async Task<bool> SaveChangesAsync()
+        {
+            return (await _context.SaveChangesAsync()) > 0;
+        }
+
+        //TxQoh Methods
+
         public async Task<IEnumerable<TxQoh>> GetTxQohsAsync()
         {
             var txqohs = await _context.TxQohs.ToListAsync();
             return txqohs;
         }
 
-        public async Task<IEnumerable<SoPlan>> GetSoPlansAsync()
+        public async Task<TxQoh> GetTxQoh(int id)
         {
-            var soplans = await _context.SoPlans.ToListAsync();
-            return soplans;
+            var specificpn = await _context.TxQohs.FirstOrDefaultAsync(m => m.TxQohId == id);
+            return specificpn;
         }
 
-        public async Task<IEnumerable<SoPlan>> GetShipOuts()
-        {
-            var soplans = await _context.SoPlans.Where(x=>x.ShipPlanStatus == "Closed/Shipped").ToListAsync();
-            return soplans;
-        }
+        //PoPlan Methods
 
         public async Task<IEnumerable<PoPlan>> GetPoPlansAsync()
         {
             var poplans = await _context.PoPlans.ToListAsync();
             return poplans;
+        }
+
+        public async Task<PoPlan> GetPoPlan(int id)
+        {
+            var poplanspecific = await _context.PoPlans.FirstOrDefaultAsync(m => m.PoPlanId == id);
+            return poplanspecific;
         }
 
         public async Task<IEnumerable<PoPlan>> GetNotReceived()
@@ -76,17 +85,13 @@ namespace API.Data
             var poplans = await _context.PoPlans.Where(x=>x.PoOrderStatus == "Transit").ToListAsync();
             return poplans;
         }
- 
-        public async Task<TxQoh> GetTxQoh(int id)
+
+        //SoPlan Methods
+
+        public async Task<IEnumerable<SoPlan>> GetSoPlansAsync()
         {
-            var specificpn = await _context.TxQohs.FirstOrDefaultAsync(m => m.TxQohId == id);
-            return specificpn;
-        }
- 
-        public async Task<PoPlan> GetPoPlan(int id)
-        {
-            var poplanspecific = await _context.PoPlans.FirstOrDefaultAsync(m => m.PoPlanId == id);
-            return poplanspecific;
+            var soplans = await _context.SoPlans.ToListAsync();
+            return soplans;
         }
 
         public async Task<SoPlan> GetSoPlan(int id)
@@ -95,10 +100,12 @@ namespace API.Data
             return soplanspecific;
         }
 
-        public async Task<bool> SaveChangesAsync()
+        public async Task<IEnumerable<SoPlan>> GetShipOuts()
         {
-            return (await _context.SaveChangesAsync()) > 0;
+            var soplans = await _context.SoPlans.Where(x=>x.ShipPlanStatus == "Closed/Shipped").ToListAsync();
+            return soplans;
         }
+
 
     }
 }

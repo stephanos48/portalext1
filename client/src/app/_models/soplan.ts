@@ -1,7 +1,6 @@
 export interface SoPlan {
     soPlanId: number;
     soNumber: string;
-    soLine: string;
     customer: string;
     customerOrderNumber: string;
     customerOrderLine: string;

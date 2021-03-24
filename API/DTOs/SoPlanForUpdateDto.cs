@@ -5,27 +5,26 @@ namespace API.DTOs
 {
     public class SoPlanForUpdateDto
     {
-        public int SoPlanId { get; set; }
-
-        [Display(Name = "Extreme SO")]
-        public string SoNumber { get; set; }
-
-        [Display(Name = "SO Line")]
-        public string SoLine { get; set; }
-
-        public string Customer { get; set; }
-
-        [Display(Name = "CustomerPo")]
-        public string CustomerOrderNumber { get; set; }
-
-        [Display(Name = "Customer PO Line")]
-        public string CustomerPoLine { get; set; }
-        public string InvNumber { get; set; }
+       public int SoPlanId { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "OrderDate")]
         public DateTime? OrderDateTime { get; set; }
+
+        public string Customer { get; set; }
+
+        [Display(Name = "CustomerPo")]
+        public string CustomerOrderNo { get; set; }
+
+        [Display(Name = "Customer PO Line")]
+        public string CustomerOrderLine { get; set; }
+
+        [Display(Name = "Extreme SO")]
+        public string SoNumber { get; set; }
+
+        public string WoNumber { get; set; }
+
 
         [Display(Name = "CustomerPn")]
         public string CustomerPn { get; set; }
@@ -34,13 +33,15 @@ namespace API.DTOs
         public string ExtremePn { get; set; }
 
         public string PartDescription { get; set; }
-        public string WorkOrderNumber { get; set; }
+
 
         [Display(Name = "OrderQty")]
         public int OrderQty { get; set; }
 
         [Display(Name = "ShipQty")]
         public int? ShipQty { get; set; }
+
+        public string InvNumber { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -56,7 +57,7 @@ namespace API.DTOs
         [Display(Name = "ShipDate")]
         public DateTime? ShipDateTime { get; set; }
 
-        public string SoOrderStatus { get; set; }
+        public string ShipPlanStatus { get; set; }
 
         public string HotShipment { get; set; }
 
