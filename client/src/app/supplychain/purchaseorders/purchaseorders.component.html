@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div *ngIf="!createMode">
-      <h2>Purchase Orders</h2>
+      <h2>Supply Chain - Open Orders -- Not yet In Transit or Received</h2>
       <a class="nav-link" [routerLink]="['/supplychain']"><h2><i class="fa fa-arrow-left"></i></h2></a>
       <div style="text-align: left">
           <button class="btn btn-primary btn-md" (click)="createToggle()">Create</button>
@@ -16,7 +16,7 @@
               <th style="width: 10%">OrderDate</th>
               <th style="width: 10%">CustomerPn</th>
               <th style="width: 5%">Qty</th>
-              <th style="width: 10%">Container</th>              
+              <th style="width: 10%">ShipDate</th>              
               <th style="width: 10%">EtaDate</th>
               <th style="width: 33%">Notes</th>
             </tr>
@@ -29,7 +29,7 @@
               <td>{{poplan.orderDateTime | date:'shortDate'}}</td>
               <td>{{poplan.customerPn}}</td>
               <td>{{poplan.orderQty}}</td>
-              <td>{{poplan.containerExt}}</td>              
+              <td>{{poplan.shipDateTime | date: 'shortDate'}}</td>              
               <td>{{poplan.etaDateTime | date:'shortDate'}}</td>
               <td>{{poplan.notes}}</td>
             </tr>
