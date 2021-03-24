@@ -30,6 +30,7 @@ import { TxqohactualsComponent } from './inventory/txqohactuals/txqohactuals.com
 import { InventoryComponent } from './inventory/inventory.component';
 import { ReceivedComponent } from './supplychain/received/received.component';
 import { TransitComponent } from './supplychain/transit/transit.component';
+import { SupplychainComponent } from './supplychain/supplychain.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -50,6 +51,7 @@ const routes: Routes = [
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
       {path: 'purchaseorders', component: PurchaseordersComponent},
+      {path: 'supplychain', component: SupplychainComponent},
       {path: 'poplan-create', component: PoplanCreateComponent},
       {path: 'received', component: ReceivedComponent},
       {path: 'transit', component: TransitComponent},
