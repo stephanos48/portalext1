@@ -14,16 +14,16 @@
           <div class="form-group">
             <select type="text" class="form-control" required name="customer" [(ngModel)]="soplan.customer" placeholder="Customer">
               <option value="">Select Customer</option>
-              <option value="1">Sertan</option>
-              <option value="2">DIP</option>
-              <option value="3">UH</option>
-              <option value="4">WB</option>
-              <option value="5">WQ</option>
+              <option value="Sertan">Sertan</option>
+              <option value="DIP">DIP</option>
+              <option value="UH">UH</option>
+              <option value="WB">WB</option>
+              <option value="WQ">WQ</option>
             </select>
           </div>
         
           <div class="form-group">
-            <input type="text" class="form-control" name="customerOrderNumber" [(ngModel)]="soplan.customerOrderNumber" Placeholder="CustomerOrderNumber">
+            <input type="text" class="form-control" name="customerOrderNumber" [(ngModel)]="soplan.customerOrderNo" Placeholder="CustomerOrderNumber">
           </div>
         
           <div class="form-group">
@@ -35,7 +35,7 @@
           </div>
         
           <div class="form-group">
-            <input type="text" class="form-control" name="workOrderNumber" [(ngModel)]="soplan.workOrderNumber" Placeholder="WorkOrderNumber">
+            <input type="text" class="form-control" name="workOrderNumber" [(ngModel)]="soplan.workOrderNo" Placeholder="WorkOrderNumber">
           </div>
         
           <div class="form-group">
@@ -75,7 +75,7 @@
           </div>
         
           <div class="form-group">
-            <select type="text" class="form-control" required name="soOrderStatus" [(ngModel)]="soplan.soOrderStatus" placeholder="SoOrderStatus">
+            <select type="text" class="form-control" required name="shipPlanStatus" [(ngModel)]="soplan.shipPlanStatus" placeholder="ShipPlanStatus">
               <option value="">Select Status</option>
               <option value="New">New</option>
               <option value="SoNotConfirmed">SoNotConfirmed</option>
@@ -95,8 +95,8 @@
           <div class="form-group">
             <select type="text" class="form-control" required name="hotShipment" [(ngModel)]="soplan.hotShipment" placeholder="HotShipment">
               <option value="">Hot Shipment?</option>
-              <option value="1">Yes</option>
-              <option value="2">No</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
             </select>
           </div>
         

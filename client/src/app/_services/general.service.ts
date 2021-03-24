@@ -14,6 +14,7 @@ export class GeneralService {
   baseUrl = environment.apiUrl;
   formData: TxQoh;
   formData1: PoPlan;
+  formData2: SoPlan;
 
   constructor(private http: HttpClient) { }
 

@@ -11,16 +11,16 @@
   <div class="form-group">
     <select type="text" class="form-control" required name="customer" [(ngModel)]="model.customer" placeholder="Customer">
       <option value="">Select Customer</option>
-      <option value="1">Sertan</option>
-      <option value="2">DIP</option>
-      <option value="3">UH</option>
-      <option value="4">WB</option>
-      <option value="5">WQ</option>
+      <option value="Sertan">Sertan</option>
+      <option value="DIP">DIP</option>
+      <option value="UH">UH</option>
+      <option value="WB">WB</option>
+      <option value="WQ">WQ</option>
     </select>
   </div>
 
   <div class="form-group">
-    <input type="text" class="form-control" name="customerOrderNumber" [(ngModel)]="model.customerOrderNumber" Placeholder="CustomerOrderNumber">
+    <input type="text" class="form-control" name="customerOrderNumber" [(ngModel)]="model.customerOrderNo" Placeholder="CustomerOrderNo">
   </div>
 
   <div class="form-group">
@@ -29,10 +29,6 @@
 
   <div class="form-group">
     <input type="text" class="form-control" name="soNumber" [(ngModel)]="model.soNumber" Placeholder="SoNumber">
-  </div>
-
-  <div class="form-group">
-    <input type="text" class="form-control" name="soLine" [(ngModel)]="model.soLine" Placeholder="SoLine">
   </div>
 
   <div class="form-group">
@@ -76,7 +72,7 @@
   </div>
 
   <div class="form-group">
-    <select type="text" class="form-control" required name="soOrderStatus" [(ngModel)]="model.soOrderStatus" placeholder="SoOrderStatus">
+    <select type="text" class="form-control" required name="shipPlanStatus" [(ngModel)]="model.shipPlanStatus" placeholder="ShipPlanStatus">
       <option value="">Select Status</option>
       <option value="New">New</option>
       <option value="SoNotConfirmed">SoNotConfirmed</option>
