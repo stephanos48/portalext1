@@ -1,6 +1,7 @@
 <h2 class="text-center text-primary">Create a new Purchase Order</h2>
 <hr>
-
+<a class="nav-link" [routerLink]="['/supplychain']"><h2><i class="fa fa-arrow-left"></i></h2></a>
+<br>
 <form #createForm="ngForm" (ngSubmit)="create()">
   <div class="form-group">
     <input type="text" class="form-control" name="poNumber" [(ngModel)]="model.poNumber" Placeholder="PoNumber">

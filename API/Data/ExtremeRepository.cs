@@ -52,9 +52,10 @@ namespace API.Data
             var poplans = await _context.PoPlans.ToListAsync();
             return poplans;
         }
+        
         public async Task<IEnumerable<PoPlan>> GetNotReceived()
         {
-            var poplans = await _context.PoPlans.Where(x=>x.PoOrderStatus != "Closed/Received").ToListAsync();
+            var poplans = await _context.PoPlans.Where(x=>x.PoOrderStatus != "Closed/Received").Where(y=>y.PoOrderStatus != "Transit").ToListAsync();
             return poplans;
         }
 
