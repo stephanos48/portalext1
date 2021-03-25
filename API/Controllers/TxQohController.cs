@@ -63,11 +63,26 @@ namespace API.Controllers
                             Notes = tx.Notes
                         };
 
-                //List<TxQoh> txhold = new List<TxQoh>();
+                List<TxQohForReturnDto> txhold = new List<TxQohForReturnDto>();
+                foreach(var qoh in query.ToList())
+                {
+                    txhold.Add(new TxQohForReturnDto
+                    {
 
-            var txqohsToReturn = query;
+                        TxQohId = qoh.Id,
+                        Pn = qoh.Pn,
+                        Customer = qoh.Customer,
+                        Jan1Qoh = qoh.Jan1Qoh,
+                        Jan1Rec = qoh.Jan1Rec,
+                        Jan1Ship = qoh.Jan1Ship,
+                        Qoh = qoh.Qoh,
+                        Location = qoh.Location,
+                        Notes = qoh.Notes
 
-            return Ok(txqohsToReturn);
+                    });
+                }
+
+            return Ok(txhold);
         }
       
         [HttpGet("{id}", Name = "getTxQoh")]

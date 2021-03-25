@@ -3,9 +3,9 @@ export interface TxQohActual {
     pn: string;
     partDescription: string;
     customer: string;
-    jan1qoh: number;
-    jan1rec: number;
-    jan1ship: number;
+    jan1Qoh: number;
+    jan1Rec: number;
+    jan1Ship: number;
     qoh: number;
     location: string;
     htsCode: string;
