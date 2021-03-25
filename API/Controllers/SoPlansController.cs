@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers
 {
 
-    [Authorize]
+
     public class SoPlansController : BaseApiController
     {
         

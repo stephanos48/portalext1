@@ -1,17 +1,17 @@
 export interface SoPlan {
     soPlanId: number;
-    soNumber: string;
+    orderDateTime: Date;
     customer: string;
     customerOrderNo: string;
     customerOrderLine: string;
-    invNumber: string;
-    orderDateTime: Date;
+    soNumber: string;
+    woNumber: string;
     customerPn: string;
     extremePn: string;
     partDescription: string;
-    workOrderNo: number;
     orderQty: number;
     shipQty: number;
+    invNumber: string;
     requestedDateTime: Date;
     promiseDateTime: Date;
     shipDateTime: Date;
