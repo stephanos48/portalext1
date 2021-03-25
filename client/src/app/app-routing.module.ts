@@ -32,6 +32,7 @@ import { ReceivedComponent } from './supplychain/received/received.component';
 import { TransitComponent } from './supplychain/transit/transit.component';
 import { SupplychainComponent } from './supplychain/supplychain.component';
 import { SlottedComponent } from './sales/slotted/slotted.component';
+import { SalesListComponent } from './sales/sales-list/sales-list.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -60,7 +61,7 @@ const routes: Routes = [
       {path: 'sales', component: SalesComponent},
       {path: 'slotted', component: SlottedComponent},
       {path: 'sales-create', component: SalesCreateComponent},
-      {path: 'sales-list', component: SalesCreateComponent},
+      {path: 'sales-list', component: SalesListComponent},
       {path: 'soplan-modal', component: SoplanModalComponent},
       {path: 'shipouts', component: ShipoutsComponent},
       {path: 'sertan', component: SertanComponent},
