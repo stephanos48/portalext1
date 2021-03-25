@@ -31,6 +31,8 @@ export class GeneralService {
     return this.http.get(this.baseUrl + 'responsibles/getResponsibles');
   }*/
 
+  //TxQoh Methods
+
   getTxQohs() {
     return this.http.get(this.baseUrl + 'txqoh/getTxQohs');
   }
@@ -54,7 +56,8 @@ export class GeneralService {
   deleteTxQoh(id: number) {
     return this.http.delete(this.baseUrl + 'txqoh/deletePn' + id);
   }
-  
+
+  //Purchase Orders Methods
 
   getPoPlans() {
     return this.http.get(this.baseUrl + 'poplans/getPoPlans');
@@ -88,9 +91,14 @@ export class GeneralService {
     return this.http.put(this.baseUrl + 'poplans/' + id, poplan);
   }
 
+  //Sales Orders Methods
 
   getShipOuts() {
     return this.http.get(this.baseUrl + 'soplans/getShipOuts');
+  }
+
+  getSlotted() {
+    return this.http.get(this.baseUrl + 'soplans/getSlotted');
   }
 
   getSoPlans() {
@@ -113,5 +121,4 @@ export class GeneralService {
     return this.http.post(this.baseUrl + 'soplans/' + id, soplan);
   }
   
-
 }

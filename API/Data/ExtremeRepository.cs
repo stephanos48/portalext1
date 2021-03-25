@@ -106,6 +106,11 @@ namespace API.Data
             return soplans;
         }
 
+        public async Task<IEnumerable<SoPlan>> GetSlotted()
+        {
+            var soplans = await _context.SoPlans.Where(x=>x.ShipPlanStatus == "Slotted").ToListAsync();
+            return soplans;
+        }
 
     }
 }

@@ -56,6 +56,7 @@ import { SupplychainComponent } from './supplychain/supplychain.component';
 import { SalesListComponent } from './sales/sales-list/sales-list.component';
 import { TransitComponent } from './supplychain/transit/transit.component';
 import { ReceivedComponent } from './supplychain/received/received.component';
+import { SlottedComponent } from './sales/slotted/slotted.component';
 
 
 @NgModule({
@@ -101,7 +102,8 @@ import { ReceivedComponent } from './supplychain/received/received.component';
     SupplychainComponent,
     SalesListComponent,
     TransitComponent,
-    ReceivedComponent
+    ReceivedComponent,
+    SlottedComponent
     
   ],
   imports: [

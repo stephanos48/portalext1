@@ -31,6 +31,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ReceivedComponent } from './supplychain/received/received.component';
 import { TransitComponent } from './supplychain/transit/transit.component';
 import { SupplychainComponent } from './supplychain/supplychain.component';
+import { SlottedComponent } from './sales/slotted/slotted.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -57,6 +58,7 @@ const routes: Routes = [
       {path: 'transit', component: TransitComponent},
       {path: 'poplan-modal', component: PoplanModalComponent},
       {path: 'sales', component: SalesComponent},
+      {path: 'slotted', component: SlottedComponent},
       {path: 'sales-create', component: SalesCreateComponent},
       {path: 'sales-list', component: SalesCreateComponent},
       {path: 'soplan-modal', component: SoplanModalComponent},

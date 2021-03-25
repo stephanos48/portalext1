@@ -12,11 +12,11 @@ import { environment } from 'src/environments/environment';
 import { SoplanModalComponent } from '../soplan-modal/soplan-modal.component';
 
 @Component({
-  selector: 'app-sales-list',
-  templateUrl: './sales-list.component.html',
-  styleUrls: ['./sales-list.component.css']
+  selector: 'app-slotted',
+  templateUrl: './slotted.component.html',
+  styleUrls: ['./slotted.component.css']
 })
-export class SalesListComponent implements OnInit {
+export class SlottedComponent implements OnInit {
   @Output() cancelCreate = new EventEmitter();
   baseUrl = environment.apiUrl;
   soplans: SoPlan[];
@@ -31,14 +31,16 @@ export class SalesListComponent implements OnInit {
     private route: ActivatedRoute, private modalService: BsModalService) { }
 
   ngOnInit(): void {
-    this.getSoPlans();
+
+    this.getSlotted();
     this.bsConfig = {
       containerClass: 'theme-red'
     };
+
   }
 
-  getSoPlans() {
-    this.generalService.getSoPlans().subscribe((soplans: SoPlan[]) => {
+  getSlotted() {
+    this.generalService.getSlotted().subscribe((soplans: SoPlan[]) => {
       this.soplans = soplans;
     }, error => {
       console.log(error);
@@ -47,7 +49,7 @@ export class SalesListComponent implements OnInit {
 
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
-    this.getSoPlans();
+    this.getSlotted();
   }
 
   createToggle() {

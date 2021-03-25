@@ -24,6 +24,7 @@ namespace API.Interfaces
 
         Task<IEnumerable<SoPlan>> GetSoPlansAsync();        
         Task<IEnumerable<SoPlan>> GetShipOuts();
+        Task<IEnumerable<SoPlan>> GetSlotted();
         Task<SoPlan> GetSoPlan(int id);
     }
 }

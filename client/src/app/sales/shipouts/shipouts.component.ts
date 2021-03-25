@@ -69,7 +69,7 @@ export class ShipoutsComponent implements OnInit {
       soplan
     };
     this.bsModalRef = this.modalService.show(SoplanModalComponent, {initialState});
-    this.bsModalRef.content.updateSelectedPoPlan.subscribe(response => {
+    this.bsModalRef.content.updateSelectedSoPlan.subscribe(response => {
       console.log('So Updated', response);
       this.toastr.success('SO updated successfully');
       }, error => {

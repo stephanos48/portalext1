@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div *ngIf="!createMode">
-      <h2>Supply Chain - Open Orders -- Not yet In Transit or Received</h2>
+      <h2>Ship Outs</h2>
       <a class="nav-link" [routerLink]="['/sales']"><h2><i class="fa fa-arrow-left"></i></h2></a>
       <div style="text-align: left">
           <button class="btn btn-primary btn-md" (click)="createToggle()">Create</button>
@@ -30,7 +30,7 @@
             <tr *ngFor="let soplan of soplans">
               <td><button class="btn btn-info" (click)="editSoPlansModal(soplan)">Edit</button></td>
               <td>{{soplan.orderDateTime | date:'shortDate'}}</td>          
-              <td>{{soplan.customerOrderNumber}}</td>
+              <td>{{soplan.customerOrderNo}}</td>
               <td>{{soplan.customerOrderLine}}</td>
               <td>{{soplan.soNumber}}</td>
               <td>{{soplan.customerPn}}</td>

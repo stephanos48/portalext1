@@ -49,6 +49,18 @@ namespace API.Controllers
             return Ok(soplansToReturn.OrderByDescending(m=>m.ShipDateTime));
 
         }
+
+        [HttpGet("getSlotted")]
+        public async Task<IActionResult> GetSlotted()
+        {
+
+            var soplans = await _unitOfWork.ExtremeRepository.GetSlotted();
+
+            var soplansToReturn = _mapper.Map<IEnumerable<SoPlanForReturnDto>>(soplans);
+
+            return Ok(soplansToReturn.OrderByDescending(m=>m.ShipDateTime));
+
+        }
       
         [HttpGet("{id}", Name = "getSoPlan")]
         public async Task<IActionResult> GetSoPlan(int id)
@@ -98,4 +110,5 @@ namespace API.Controllers
         }
 
     }
+    
 }

@@ -2,6 +2,7 @@
 <hr>
 <a class="nav-link" [routerLink]="['/sales']"><h2><i class="fa fa-arrow-left"></i></h2></a>
 <br>
+
 <form #createForm="ngForm" (ngSubmit)="create()">
 
   <div class="form-group">
@@ -88,8 +89,8 @@
   <div class="form-group">
     <select type="text" class="form-control" required name="hotShipment" [(ngModel)]="model.hotShipment" placeholder="HotShipment">
       <option value="">Hot Shipment?</option>
-      <option value="1">Yes</option>
-      <option value="2">No</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
     </select>
   </div>
 
