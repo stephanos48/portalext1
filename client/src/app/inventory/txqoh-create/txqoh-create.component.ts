@@ -28,7 +28,7 @@ export class TxqohCreateComponent implements OnInit {
     }, error => {
       this.Toastr.error(error);
     }, () => {
-      this.router.navigate(['/txqoh']);
+      this.router.navigate(['/inventory']);
     });
   }
 

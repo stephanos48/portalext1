@@ -4,6 +4,7 @@ namespace API.DTOs
     {
         public int TxQohId { get; set; }
         public string Pn { get; set; }
+        public string ExtremePn { get; set; }
         public string PartDescription { get; set; }
         public string Customer { get; set; }
         public int? Jan1Qoh { get; set; }

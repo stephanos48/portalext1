@@ -45,7 +45,7 @@ namespace API.Controllers
             var poplans = await _unitOfWork.ExtremeRepository.GetPoPlansAsync();
             var soplans = await _unitOfWork.ExtremeRepository.GetSoPlansAsync();
 
-            var startDate = DateTime.Parse("1/1/2021");
+            var startDate = DateTime.Parse("1/1/2020");
             var query = from tx in txqohs
                         join r in poplans.Where(a=>a.ReceiptDateTime >= startDate).Where(y=>y.PoOrderStatus == "Closed/Received") on tx.Pn equals r.CustomerPn into g
                         join ru in soplans.Where(a=>a.ShipDateTime >= startDate).Where(y=>y.ShipPlanStatus == "Closed/Shipped") on tx.Pn equals ru.CustomerPn into gr
@@ -54,6 +54,7 @@ namespace API.Controllers
                         {
                             Id = tx.TxQohId,
                             Pn = tx.Pn,
+                            ExtremePn = tx.ExtremePn,
                             Customer = tx.Customer,
                             Jan1Qoh = tx.Qoh,
                             Jan1Rec = (int?)g.Select(x => x.ReceivedQty).DefaultIfEmpty(0).Sum(),
@@ -71,6 +72,7 @@ namespace API.Controllers
 
                         TxQohId = qoh.Id,
                         Pn = qoh.Pn,
+                        ExtremePn = qoh.ExtremePn,
                         Customer = qoh.Customer,
                         Jan1Qoh = qoh.Jan1Qoh,
                         Jan1Rec = qoh.Jan1Rec,

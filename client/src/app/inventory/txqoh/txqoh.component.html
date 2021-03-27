@@ -12,21 +12,20 @@
           <tr>
             <th style="width: 10%"></th>
             <th style="width: 5%">Id</th> 
-            <th style="width: 15%">Customer</th>    
-            <th style="width: 10%">Pn</th>
-            <th style="width: 15%">Part Description</th>
+            <th style="width: 15%">Pn</th>
+            <th style="width: 20%">Part Description</th>
             <th style="width: 10%">Qoh</th>
             <th style="width: 10%">Location</th>
             <th style="width: 10%">HTS Code</th>
-            <th style="width: 15%">Notes</th>
+            <th style="width: 20%">Notes</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let txqoh of txqohs">
             <td><button class="btn btn-info" (click)="editTxQohsModal(txqoh)">Edit</button><!--|<button class="btn btn-info" (click)="deleteTxQoh(txqoh.txQohId)">Delete</button>--></td>
             <td>{{txqoh.txQohId}}</td> 
-            <td>{{txqoh.customer}}</td>
             <td>{{txqoh.pn}}</td>
+            <td>{{txqoh.extremePn}}</td>
             <td>{{txqoh.partDescription}}</td>
             <td>{{txqoh.qoh}}</td>
             <td>{{txqoh.location}}</td>

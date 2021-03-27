@@ -13,13 +13,14 @@
               <th style="width: 5%"></th>
               <th style="width: 5%">Id</th>         
               <th style="width: 15%">Pn</th>
+              <th style="width: 15%">Extreme Pn</th>
               <th style="width: 10%">Qoh</th>
               <th style="width: 5%"></th>
               <th style="width: 10%">Jan1Qoh</th>
-              <th style="width: 10%">Rec1Qoh</th>
-              <th style="width: 10%">Ship1Qoh</th>
-              <th style="width: 10%">Location</th>
-              <th style="width: 20%">Notes</th>
+              <th style="width: 10%">Jan1Rec</th>
+              <th style="width: 10%">Jan1Ship</th>
+              <th style="width: 5%">Location</th>
+              <th style="width: 10%">Notes</th>
             </tr>
           </thead>
           <tbody>
@@ -27,6 +28,7 @@
               <td><button class="btn btn-info" (click)="editTxQohsModal(txqoh)">Edit</button></td>
               <td>{{txqoh.txQohId}}</td>          
               <td>{{txqoh.pn}}</td>
+              <td>{{txqoh.extremePn}}</td>
               <td>{{txqoh.qoh}}</td>
               <td></td>
               <td>{{txqoh.jan1Qoh}}</td>
