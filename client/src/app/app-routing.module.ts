@@ -34,6 +34,7 @@ import { SupplychainComponent } from './supplychain/supplychain.component';
 import { SlottedComponent } from './sales/slotted/slotted.component';
 import { SalesListComponent } from './sales/sales-list/sales-list.component';
 import { PoplanDetailComponent } from './supplychain/poplan-detail/poplan-detail.component';
+import { PoPlanDetailedResolver } from './_resolvers/poplan-detailed.resolver';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -56,7 +57,7 @@ const routes: Routes = [
       {path: 'purchaseorders', component: PurchaseordersComponent},
       {path: 'supplychain', component: SupplychainComponent},
       {path: 'poplan-create', component: PoplanCreateComponent},
-      {path: 'poplan-detail', component: PoplanDetailComponent},
+      {path: 'poplan-detail/:poplan', component: PoplanDetailComponent, resolve: {poplan: PoPlanDetailedResolver}},
       {path: 'received', component: ReceivedComponent},
       {path: 'transit', component: TransitComponent},
       {path: 'poplan-modal', component: PoplanModalComponent},

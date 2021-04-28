@@ -54,6 +54,11 @@ namespace API.Data
             return specificpn;
         }
 
+        public void DeleteTxQoh(TxQoh txQoh)
+        {
+            _context.TxQohs.Remove(txQoh);
+        }
+
         //PoPlan Methods
 
         public async Task<IEnumerable<PoPlan>> GetPoPlansAsync()
@@ -86,11 +91,26 @@ namespace API.Data
             return poplans;
         }
 
+        public void DeletePoPlan(PoPlan poPlan)
+        {
+            _context.PoPlans.Remove(poPlan);
+        }
+
         //SoPlan Methods
 
         public async Task<IEnumerable<SoPlan>> GetSoPlansAsync()
         {
             var soplans = await _context.SoPlans.ToListAsync();
+            return soplans;
+        }
+
+        public async Task<IEnumerable<SoPlan>> GetOpenSoPlansAsync()
+        {
+            var soplans = await _context.SoPlans.Where(x=>x.ShipPlanStatus != "Closed/Shipped")
+            .Where(y=>y.ShipPlanStatus != "Slotted")
+            .Where(z=>z.ShipPlanStatus != "Closed/Canceled")
+            .Where(x=>x.ShipPlanStatus != "OrderToCancel")
+            .ToListAsync();
             return soplans;
         }
 
@@ -110,6 +130,68 @@ namespace API.Data
         {
             var soplans = await _context.SoPlans.Where(x=>x.ShipPlanStatus == "Slotted").ToListAsync();
             return soplans;
+        }
+
+        public void DeleteSoPlan(SoPlan soPlan)
+        {
+            _context.SoPlans.Remove(soPlan);
+        }
+
+        //Quote Methods
+
+        public async Task<IEnumerable<Quote>> GetQuotesAsync()
+        {
+            var quotes = await _context.Quotes.ToListAsync();
+            return quotes;
+        }
+
+        public async Task<Quote> GetQuote(int id)
+        {
+            var quote = await _context.Quotes.FirstOrDefaultAsync(m => m.QuoteId == id);
+            return quote;
+        }
+
+        public void DeleteQuote(Quote quote)
+        {
+            _context.Quotes.Remove(quote);
+        }
+
+        //QuoteDetail Methods
+
+        public async Task<IEnumerable<QuoteDetail>> GetQuoteDetailsAsync()
+        {
+            var quotedetails = await _context.QuoteDetails.ToListAsync();
+            return quotedetails;
+        }
+
+        public async Task<QuoteDetail> GetQuoteDetail(int id)
+        {
+            var quotedetail = await _context.QuoteDetails.FirstOrDefaultAsync(m => m.QuoteDetailId == id);
+            return quotedetail;
+        }
+
+        public void DeleteQuoteDetail(QuoteDetail quoteDetail)
+        {
+            _context.QuoteDetails.Remove(quoteDetail);
+        }
+
+        //Supplier Methods
+
+        public async Task<IEnumerable<Supplier>> GetSuppliersAsync()
+        {
+            var suppliers = await _context.Suppliers.ToListAsync();
+            return suppliers;
+        }
+
+        public async Task<Supplier> GetSupplier(int id)
+        {
+            var supplier = await _context.Suppliers.FirstOrDefaultAsync(m => m.SupplierId == id);
+            return supplier;
+        }
+
+        public void DeleteSupplier(Supplier supplier)
+        {
+            _context.Suppliers.Remove(supplier);
         }
 
     }

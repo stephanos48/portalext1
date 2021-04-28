@@ -32,6 +32,15 @@ namespace API.Helpers
             CreateMap<SoPlanForCreationDto, SoPlan>();
             CreateMap<SoPlanForReturnDto, SoPlan>().ReverseMap();
             CreateMap<SoPlanForUpdateDto, SoPlan>();
+            CreateMap<SupplierForCreationDto, Supplier>();
+            CreateMap<SupplierForReturnDto, Supplier>().ReverseMap();
+            CreateMap<SupplierForUpdateDto, Supplier>();
+            CreateMap<QuoteForCreationDto, Quote>();
+            CreateMap<QuoteForReturnDto, Quote>().ReverseMap();
+            CreateMap<QuoteForUpdateDto, Quote>();
+            CreateMap<QuoteDetailForCreationDto, QuoteDetail>();
+            CreateMap<QuoteDetailForReturnDto, QuoteDetail>().ReverseMap();
+            CreateMap<QuoteDetailForUpdateDto, QuoteDetail>();
         }
 
     }

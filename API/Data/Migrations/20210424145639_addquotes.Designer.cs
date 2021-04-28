@@ -3,15 +3,17 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210424145639_addquotes")]
+    partial class addquotes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -366,70 +368,6 @@ namespace API.Data.Migrations
                     b.ToTable("PoPlans");
                 });
 
-            modelBuilder.Entity("API.Entities.Quote", b =>
-                {
-                    b.Property<int>("QuoteId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .UseIdentityByDefaultColumn();
-
-                    b.Property<DateTime>("QuoteDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("QuotedBy")
-                        .HasColumnType("text");
-
-                    b.Property<int>("SupplierId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("QuoteId");
-
-                    b.HasIndex("SupplierId");
-
-                    b.ToTable("Quotes");
-                });
-
-            modelBuilder.Entity("API.Entities.QuoteDetail", b =>
-                {
-                    b.Property<int>("QuoteDetailId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .UseIdentityByDefaultColumn();
-
-                    b.Property<decimal>("Freight")
-                        .HasColumnType("numeric");
-
-                    b.Property<decimal>("Labor")
-                        .HasColumnType("numeric");
-
-                    b.Property<bool>("LatestQuote")
-                        .HasColumnType("boolean");
-
-                    b.Property<decimal>("Material")
-                        .HasColumnType("numeric");
-
-                    b.Property<string>("Pn")
-                        .HasColumnType("text");
-
-                    b.Property<int>("QuoteId")
-                        .HasColumnType("integer");
-
-                    b.Property<decimal>("Tariff")
-                        .HasColumnType("numeric");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("numeric");
-
-                    b.Property<decimal>("Weight")
-                        .HasColumnType("numeric");
-
-                    b.HasKey("QuoteDetailId");
-
-                    b.HasIndex("QuoteId");
-
-                    b.ToTable("QuoteDetails");
-                });
-
             modelBuilder.Entity("API.Entities.SoPlan", b =>
                 {
                     b.Property<int>("SoPlanId")
@@ -504,21 +442,6 @@ namespace API.Data.Migrations
                     b.HasKey("SoPlanId");
 
                     b.ToTable("SoPlans");
-                });
-
-            modelBuilder.Entity("API.Entities.Supplier", b =>
-                {
-                    b.Property<int>("SupplierId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .UseIdentityByDefaultColumn();
-
-                    b.Property<string>("SupplierName")
-                        .HasColumnType("text");
-
-                    b.HasKey("SupplierId");
-
-                    b.ToTable("Suppliers");
                 });
 
             modelBuilder.Entity("API.Entities.TxQoh", b =>
@@ -714,28 +637,6 @@ namespace API.Data.Migrations
                     b.Navigation("AppUser");
                 });
 
-            modelBuilder.Entity("API.Entities.Quote", b =>
-                {
-                    b.HasOne("API.Entities.Supplier", "Supplier")
-                        .WithMany("Quotes")
-                        .HasForeignKey("SupplierId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Supplier");
-                });
-
-            modelBuilder.Entity("API.Entities.QuoteDetail", b =>
-                {
-                    b.HasOne("API.Entities.Quote", "Quote")
-                        .WithMany("QuoteDetails")
-                        .HasForeignKey("QuoteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Quote");
-                });
-
             modelBuilder.Entity("API.Entities.UserLike", b =>
                 {
                     b.HasOne("API.Entities.AppUser", "LikedUser")
@@ -814,16 +715,6 @@ namespace API.Data.Migrations
             modelBuilder.Entity("API.Entities.Group", b =>
                 {
                     b.Navigation("Connections");
-                });
-
-            modelBuilder.Entity("API.Entities.Quote", b =>
-                {
-                    b.Navigation("QuoteDetails");
-                });
-
-            modelBuilder.Entity("API.Entities.Supplier", b =>
-                {
-                    b.Navigation("Quotes");
                 });
 #pragma warning restore 612, 618
         }

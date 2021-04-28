@@ -31,14 +31,14 @@ export class SalesListComponent implements OnInit {
     private route: ActivatedRoute, private modalService: BsModalService) { }
 
   ngOnInit(): void {
-    this.getSoPlans();
+    this.getOpenSoPlans();
     this.bsConfig = {
       containerClass: 'theme-red'
     };
   }
 
-  getSoPlans() {
-    this.generalService.getSoPlans().subscribe((soplans: SoPlan[]) => {
+  getOpenSoPlans() {
+    this.generalService.getOpenSoPlans().subscribe((soplans: SoPlan[]) => {
       this.soplans = soplans;
     }, error => {
       console.log(error);
@@ -47,7 +47,7 @@ export class SalesListComponent implements OnInit {
 
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
-    this.getSoPlans();
+    this.getOpenSoPlans();
   }
 
   createToggle() {

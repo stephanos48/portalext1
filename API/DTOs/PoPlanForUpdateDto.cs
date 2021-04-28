@@ -26,6 +26,8 @@ namespace API.DTOs
         [Display(Name = "OrderDate")]
         public DateTime? OrderDateTime { get; set; }
 
+        public decimal PartPrice { get; set; }
+
         [Display(Name = "CustomerPn")]
         public string CustomerPn { get; set; }
 

@@ -4,7 +4,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { PoPlan } from '../_models/poplan';
+import { Quote } from '../_models/quote';
+import { QuoteDetail } from '../_models/quotedetail';
 import { SoPlan } from '../_models/soplan';
+import { Supplier } from '../_models/supplier';
 import { TxQoh } from '../_models/txqoh';
 
 @Injectable({
@@ -105,6 +108,10 @@ export class GeneralService {
     return this.http.get(this.baseUrl + 'soplans/getSoPlans');
   }
 
+  getOpenSoPlans() {
+    return this.http.get(this.baseUrl + 'soplans/getOpenSoPlans');
+  }
+
   getSoPlan(id): Observable<SoPlan> {
     return this.http.get<SoPlan>(this.baseUrl + 'soplans/' + id);
   }
@@ -119,6 +126,72 @@ export class GeneralService {
 
   deleteSoPlan(id: number, soplan: SoPlan) {
     return this.http.post(this.baseUrl + 'soplans/' + id, soplan);
+  }
+
+  //Quote Methods
+
+  getQuotes() {
+    return this.http.get(this.baseUrl + 'quote/getQuotes');
+  }
+
+  updateQuote(id: number, quote: Quote) {
+    return this.http.put(this.baseUrl + 'quote/' + id, quote);
+  }
+
+  createQuote(quote: Quote) {
+    return this.http.post(this.baseUrl + 'quote/createQuote', quote);
+  }
+
+  getQuote(id): Observable<Quote> {
+    return this.http.get<Quote>(this.baseUrl + 'quote/' + id);
+  }
+
+  deleteQuote(id: number) {
+    return this.http.delete(this.baseUrl + 'quote/deleteQuote' + id);
+  }
+
+  //Supplier Methods
+
+  getSuppliers() {
+    return this.http.get(this.baseUrl + 'supplier/getSuppliers');
+  }
+
+  updateSupplier(id: number, supplier: Supplier) {
+    return this.http.put(this.baseUrl + 'supplier/' + id, supplier);
+  }
+
+  createSupplier(supplier: Supplier) {
+    return this.http.post(this.baseUrl + 'supplier/createSupplier', supplier);
+  }
+
+  getSupplier(id): Observable<Supplier> {
+    return this.http.get<Supplier>(this.baseUrl + 'supplier/' + id);
+  }
+
+  deleteSupplier(id: number) {
+    return this.http.delete(this.baseUrl + 'supplier/deleteSupplier' + id);
+  }
+
+  //QuoteDetail Methods
+
+  getQuoteDetails() {
+    return this.http.get(this.baseUrl + 'quoteDetail/getQuoteDetails');
+  }
+
+  updateQuoteDetail(id: number, quoteDetail: QuoteDetail) {
+    return this.http.put(this.baseUrl + 'quoteDetail/' + id, quoteDetail);
+  }
+
+  createQuoteDetail(quoteDetail: QuoteDetail) {
+    return this.http.post(this.baseUrl + 'quoteDetail/createQuoteDetail', quoteDetail);
+  }
+
+  getQuoteDetail(id): Observable<QuoteDetail> {
+    return this.http.get<QuoteDetail>(this.baseUrl + 'quoteDetail/' + id);
+  }
+
+  deleteQuoteDetail(id: number) {
+    return this.http.delete(this.baseUrl + 'quoteDetail/deleteQuoteDetail' + id);
   }
   
 }

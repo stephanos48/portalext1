@@ -121,6 +121,20 @@ namespace API.Controllers
 
         }
 
+        [HttpDelete("delete-poPlan/{poPlanId}")]
+        public async Task<ActionResult> DeletePoPlan(int poPlanId)
+        {
+            var po = await _unitOfWork.ExtremeRepository.GetPoPlan(poPlanId);
+
+            if (po == null) return NotFound();
+
+            _unitOfWork.ExtremeRepository.DeletePoPlan(po);
+
+            if (await _unitOfWork.Complete()) return Ok();
+
+            return BadRequest("Failed to delete the PO");
+        }
+
         
     }
 }

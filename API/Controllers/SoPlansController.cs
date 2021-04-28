@@ -38,6 +38,18 @@ namespace API.Controllers
 
         }
 
+        [HttpGet("getOpenSoPlans")]
+        public async Task<IActionResult> GetOpenSoPlans()
+        {
+
+            var soplans = await _unitOfWork.ExtremeRepository.GetOpenSoPlansAsync();
+
+            var soplansToReturn = _mapper.Map<IEnumerable<SoPlanForReturnDto>>(soplans);
+
+            return Ok(soplansToReturn.OrderByDescending(m=>m.ShipDateTime));
+
+        }
+
         [HttpGet("getShipOuts")]
         public async Task<IActionResult> GetShipOuts()
         {

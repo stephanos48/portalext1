@@ -46,6 +46,14 @@ export class PurchaseordersComponent implements OnInit {
     });
   }
 
+  detailPoPlan() {
+    this.generalService.getPoPlan(this.poplan.poPlanId).subscribe((poplan: PoPlan) => {
+      this.poplan = poplan;
+    }, error => {
+      console.log(error);
+    });
+  }
+
   getNotReceived() {
     this.generalService.getNotReceived().subscribe((poplans: PoPlan[]) => {
       this.poplans = poplans;

@@ -34,6 +34,8 @@ namespace API.Entities
 
         public string PartDescription { get; set; }
 
+        public decimal PartPrice { get; set; }
+
         [Display(Name = "OrderQty")]
         public int OrderQty { get; set; }
 

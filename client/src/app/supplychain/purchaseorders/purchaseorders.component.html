@@ -23,7 +23,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let poplan of poplans">
-              <td><button class="btn btn-info" (click)="editPoPlansModal(poplan)">Edit</button></td>
+              <td><button class="btn btn-info" (click)="editPoPlansModal(poplan)">Edit</button>|<button class="btn btn-info" (click)="detailPoPlan(poplan)">Detail</button></td>
               <td>{{poplan.poPlanId}}</td>          
               <td>{{poplan.poNumber}}</td>
               <td>{{poplan.orderDateTime | date:'shortDate'}}</td>

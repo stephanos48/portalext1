@@ -9,6 +9,7 @@ export interface PoPlan {
     customerPn: string;
     extremePn: string;
     partDescription: string;
+    partPrice: number;
     orderQty: number;
     receivedQty: number;
     containerId: string;

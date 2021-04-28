@@ -28,6 +28,10 @@ namespace API.Data
         public DbSet<SoPlan> SoPlans { get; set; }
         public DbSet<PoPlan> PoPlans { get; set; }
 
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Quote> Quotes { get; set; }
+        public DbSet<QuoteDetail> QuoteDetails { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
