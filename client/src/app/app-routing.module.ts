@@ -57,7 +57,7 @@ const routes: Routes = [
       {path: 'purchaseorders', component: PurchaseordersComponent},
       {path: 'supplychain', component: SupplychainComponent},
       {path: 'poplan-create', component: PoplanCreateComponent},
-      {path: 'poplan-detail/:poplan', component: PoplanDetailComponent, resolve: {poplan: PoPlanDetailedResolver}},
+      {path: 'poplan-detail/:id', component: PoplanDetailComponent, resolve: {poplan: PoPlanDetailedResolver}},
       {path: 'received', component: ReceivedComponent},
       {path: 'transit', component: TransitComponent},
       {path: 'poplan-modal', component: PoplanModalComponent},
