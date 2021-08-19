@@ -20,9 +20,6 @@
               <th style="width: 5%">ShipQty</th>
               <th style="width: 10%">PromiseDate</th>              
               <th style="width: 10%">ShipDate</th>
-              <th style="width: 5%">Carrier</th>
-              <th style="width: 5%">TrackingInfo</th>
-              <th style="width: 5%">ShipToAddress</th>
               <th style="width: 15%">Notes</th>
             </tr>
           </thead>
@@ -38,9 +35,6 @@
               <td>{{soplan.shipQty}}</td>
               <td>{{soplan.promiseDateTime | date:'shortDate'}}</td>
               <td>{{soplan.shipDateTime | date: 'shortDate'}}</td>              
-              <td>{{soplan.carrier}}</td>
-              <td>{{soplan.trackingInfo}}</td>
-              <td>{{soplan.shipToAddress}}</td>
               <td>{{soplan.notes}}</td>
             </tr>
           </tbody>

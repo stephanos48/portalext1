@@ -76,6 +76,7 @@ namespace API.Data
             builder.Entity<Photo>().HasQueryFilter(p => p.IsApproved);  
 
             builder.ApplyUtcDateTimeConverter(); 
+
         }
     }
 

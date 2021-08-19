@@ -58,6 +58,11 @@ import { TransitComponent } from './supplychain/transit/transit.component';
 import { ReceivedComponent } from './supplychain/received/received.component';
 import { SlottedComponent } from './sales/slotted/slotted.component';
 import { PoplanDetailComponent } from './supplychain/poplan-detail/poplan-detail.component';
+import { QuoteComponent } from './supplychain/quote/quote.component';
+import { QuoteCreateComponent } from './supplychain/quote/quote-create/quote-create.component';
+import { QuoteListComponent } from './supplychain/quote/quote-list/quote-list.component';
+import { QuoteDetailComponent } from './supplychain/quote/quote-detail/quote-detail.component';
+
 
 
 @NgModule({
@@ -105,7 +110,11 @@ import { PoplanDetailComponent } from './supplychain/poplan-detail/poplan-detail
     TransitComponent,
     ReceivedComponent,
     SlottedComponent,
-    PoplanDetailComponent
+    PoplanDetailComponent,
+    QuoteComponent,
+    QuoteCreateComponent,
+    QuoteListComponent,
+    QuoteDetailComponent
     
   ],
   imports: [

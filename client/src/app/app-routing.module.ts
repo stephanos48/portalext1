@@ -35,6 +35,7 @@ import { SlottedComponent } from './sales/slotted/slotted.component';
 import { SalesListComponent } from './sales/sales-list/sales-list.component';
 import { PoplanDetailComponent } from './supplychain/poplan-detail/poplan-detail.component';
 import { PoPlanDetailedResolver } from './_resolvers/poplan-detailed.resolver';
+import { QuoteComponent } from './supplychain/quote/quote.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -68,6 +69,7 @@ const routes: Routes = [
       {path: 'soplan-modal', component: SoplanModalComponent},
       {path: 'shipouts', component: ShipoutsComponent},
       {path: 'sertan', component: SertanComponent},
+      {path: 'quote', component: QuoteComponent},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
 
     ]

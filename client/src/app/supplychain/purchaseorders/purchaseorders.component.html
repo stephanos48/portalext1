@@ -24,6 +24,7 @@
           <tbody>
             <tr *ngFor="let poplan of poplans">
               <td><button class="btn btn-info" (click)="editPoPlansModal(poplan)">Edit</button>|<button class="btn btn-info" [routerLink]="['/poplan-detail/', poplan.poPlanId]">Detail</button></td>
+              <td><button class="btn btn-info" [routerLink]="['/poplan-detail/', poplan.poPlanId]"><i class="fa fa-info-circle"></i></button></td>
               <td>{{poplan.poPlanId}}</td>          
               <td>{{poplan.poNumber}}</td>
               <td>{{poplan.orderDateTime | date:'shortDate'}}</td>
