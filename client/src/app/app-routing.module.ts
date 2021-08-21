@@ -36,6 +36,9 @@ import { SalesListComponent } from './sales/sales-list/sales-list.component';
 import { PoplanDetailComponent } from './supplychain/poplan-detail/poplan-detail.component';
 import { PoPlanDetailedResolver } from './_resolvers/poplan-detailed.resolver';
 import { QuoteComponent } from './supplychain/quote/quote.component';
+import { QuoteCreateComponent} from './supplychain/quote/quote-create/quote-create.component';
+import { QuoteDetailComponent } from './supplychain/quote/quote-detail/quote-detail.component';
+import { QuoteListComponent } from './supplychain/quote/quote-list/quote-list.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -70,6 +73,9 @@ const routes: Routes = [
       {path: 'shipouts', component: ShipoutsComponent},
       {path: 'sertan', component: SertanComponent},
       {path: 'quote', component: QuoteComponent},
+      {path: 'quote-create', component: QuoteCreateComponent},
+      {path: 'quote-list', component: QuoteListComponent},
+      {path: 'quote-detail', component: QuoteDetailComponent},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
 
     ]
