@@ -8,6 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Pagination } from 'src/app/_models/pagination';
 import { SoPlan } from 'src/app/_models/soplan';
 import { GeneralService } from 'src/app/_services/general.service';
+import { ConfirmService } from '../../_services/confirm.service';
 import { environment } from 'src/environments/environment';
 import { SoplanModalComponent } from '../soplan-modal/soplan-modal.component';
 
@@ -28,7 +29,7 @@ export class SalesListComponent implements OnInit {
   bsModalRef: BsModalRef;
 
   constructor(private generalService: GeneralService, private toastr: ToastrService, http: HttpClient, private fb: FormBuilder,
-    private route: ActivatedRoute, private modalService: BsModalService) { }
+    private route: ActivatedRoute, private modalService: BsModalService, private confirmService: ConfirmService) { }
 
   ngOnInit(): void {
     this.getOpenSoPlans();
@@ -43,6 +44,16 @@ export class SalesListComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  deleteSoPlan(id: number) {
+    this.confirmService.confirm('Confirm delete message', 'This cannot be undone').subscribe(result => {
+      if (result) {
+        this.generalService.deleteSoPlan(id).subscribe(() => {
+          this.soplans.splice(this.soplans.findIndex(m => m.soPlanId === id), 1);
+        })
+      }
+    })
   }
 
   pageChanged(event: any): void {

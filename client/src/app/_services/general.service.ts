@@ -124,8 +124,8 @@ export class GeneralService {
     return this.http.post(this.baseUrl + 'soplans/createSoPlan', soplan);
   }
 
-  deleteSoPlan(id: number, soplan: SoPlan) {
-    return this.http.post(this.baseUrl + 'soplans/' + id, soplan);
+  deleteSoPlan(id: number) {
+    return this.http.delete(this.baseUrl + 'soplans/' + id);
   }
 
   //Quote Methods

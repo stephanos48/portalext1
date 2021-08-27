@@ -11,6 +11,7 @@
           <thead>
             <tr>
               <th style="width: 5%"></th>
+              <th style="width: 5%"></th>
               <th style="width: 5%">OrderDate</th>         
               <th style="width: 10%">PoNumber</th>
               <th style="width: 5%">PoLine</th>
@@ -20,12 +21,13 @@
               <th style="width: 5%">ShipQty</th>
               <th style="width: 10%">PromiseDate</th>              
               <th style="width: 10%">ShipDate</th>
-              <th style="width: 15%">Notes</th>
+              <th style="width: 10%">Notes</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let soplan of soplans">
               <td><button class="btn btn-info" (click)="editSoPlansModal(soplan)">Edit</button></td>
+              <td><button class="btn btn-info" (click)="deleteSoPlan(soplan.soPlanId)">Delete</button></td>
               <td>{{soplan.orderDateTime | date:'shortDate'}}</td>          
               <td>{{soplan.customerOrderNo}}</td>
               <td>{{soplan.customerOrderLine}}</td>

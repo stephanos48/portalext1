@@ -121,6 +121,18 @@ namespace API.Controllers
 
         }
 
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteSoPlan(int id)
+        {
+            var soplan = await _unitOfWork.ExtremeRepository.GetSoPlan(id);
+
+            _unitOfWork.ExtremeRepository.DeleteSoPlan(soplan);
+
+            if (await _unitOfWork.Complete()) return Ok();
+
+            return BadRequest("Problem deleting the message");
+        }
+
     }
     
 }
