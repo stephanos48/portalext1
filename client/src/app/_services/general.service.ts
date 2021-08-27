@@ -57,7 +57,7 @@ export class GeneralService {
   }
 
   deleteTxQoh(id: number) {
-    return this.http.delete(this.baseUrl + 'txqoh/deletePn' + id);
+    return this.http.delete(this.baseUrl + 'txqoh/' + id);
   }
 
   //Purchase Orders Methods

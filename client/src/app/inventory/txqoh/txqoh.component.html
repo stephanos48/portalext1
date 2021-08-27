@@ -10,7 +10,8 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th style="width: 10%"></th>
+            <th style="width: 5%"></th>
+            <th style="width: 5%"></th>           
             <th style="width: 5%">Id</th> 
             <th style="width: 10%">Pn</th>
             <th style="width: 10%">Extreme Pn</th>
@@ -24,6 +25,7 @@
         <tbody>
           <tr *ngFor="let txqoh of txqohs">
             <td><button class="btn btn-info" (click)="editTxQohsModal(txqoh)">Edit</button><!--|<button class="btn btn-info" (click)="deleteTxQoh(txqoh.txQohId)">Delete</button>--></td>
+            <td><button class="btn btn-info" (click)="deleteTxQoh(txqoh.txQohId)">Delete</button></td>
             <td>{{txqoh.txQohId}}</td> 
             <td>{{txqoh.pn}}</td>
             <td>{{txqoh.extremePn}}</td>

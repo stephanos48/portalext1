@@ -19,6 +19,7 @@ import { MatInput } from '@angular/material/input';
 import { MatFormField } from '@angular/material/form-field';
 import { TxQohActual } from 'src/app/_models/txqohactual';
 import { GeneralService } from 'src/app/_services/general.service';
+import { ConfirmService } from '../../_services/confirm.service';
 import { ToastrService } from 'ngx-toastr';
 import { TxqohModalComponent } from '../txqoh-modal/txqoh-modal.component';
 import { TxQoh } from 'src/app/_models/txqoh';
@@ -64,7 +65,7 @@ export class TxqohComponent implements OnInit {
 */
 
   constructor(private generalService: GeneralService, private toastr: ToastrService, http: HttpClient, private fb: FormBuilder,
-    private route: ActivatedRoute, private modalService: BsModalService) { }
+    private route: ActivatedRoute, private modalService: BsModalService, private confirmService: ConfirmService) { }
 
   ngOnInit(): void {
     this.getTxQohs();
@@ -80,6 +81,16 @@ export class TxqohComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  deleteTxQoh(id: number) {
+    this.confirmService.confirm('Confirm delete message', 'This cannot be undone').subscribe(result => {
+      if (result) {
+        this.generalService.deleteTxQoh(id).subscribe(() => {
+          this.txqohs.splice(this.txqohs.findIndex(m => m.txQohId === id), 1);
+        })
+      }
+    })
   }
 
   pageChanged(event: any): void {
