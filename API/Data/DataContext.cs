@@ -27,6 +27,7 @@ namespace API.Data
         public DbSet<TxQoh> TxQohs { get; set; }
         public DbSet<SoPlan> SoPlans { get; set; }
         public DbSet<PoPlan> PoPlans { get; set; }
+        public DbSet<Expense> Expenses {get;set;}
 
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Quote> Quotes { get; set; }

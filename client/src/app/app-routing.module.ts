@@ -39,6 +39,8 @@ import { QuoteComponent } from './supplychain/quote/quote.component';
 import { QuoteCreateComponent} from './supplychain/quote/quote-create/quote-create.component';
 import { QuoteDetailComponent } from './supplychain/quote/quote-detail/quote-detail.component';
 import { QuoteListComponent } from './supplychain/quote/quote-list/quote-list.component';
+import { FinanceComponent } from './finance/finance.component';
+import { ExpensesComponent } from './finance/expenses/expenses.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -76,6 +78,8 @@ const routes: Routes = [
       {path: 'quote-create', component: QuoteCreateComponent},
       {path: 'quote-list', component: QuoteListComponent},
       {path: 'quote-detail', component: QuoteDetailComponent},
+      {path: 'finance', component: FinanceComponent},
+      {path: 'expenses', component: ExpensesComponent},
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
 
     ]

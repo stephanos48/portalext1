@@ -24,7 +24,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let txqoh of txqohs">
-            <td><button class="btn btn-info" (click)="editTxQohsModal(txqoh)">Edit</button><!--|<button class="btn btn-info" (click)="deleteTxQoh(txqoh.txQohId)">Delete</button>--></td>
+            <td><button class="btn btn-info" (click)="editTxQohsModal(txqoh)">Edit</button></td>
             <td><button class="btn btn-info" (click)="deleteTxQoh(txqoh.txQohId)">Delete</button></td>
             <td>{{txqoh.txQohId}}</td> 
             <td>{{txqoh.pn}}</td>

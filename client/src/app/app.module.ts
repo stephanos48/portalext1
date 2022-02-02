@@ -62,6 +62,8 @@ import { QuoteComponent } from './supplychain/quote/quote.component';
 import { QuoteCreateComponent } from './supplychain/quote/quote-create/quote-create.component';
 import { QuoteListComponent } from './supplychain/quote/quote-list/quote-list.component';
 import { QuoteDetailComponent } from './supplychain/quote/quote-detail/quote-detail.component';
+import { FinanceComponent } from './finance/finance.component';
+import { ExpensesComponent } from './finance/expenses/expenses.component';
 
 
 
@@ -114,7 +116,9 @@ import { QuoteDetailComponent } from './supplychain/quote/quote-detail/quote-det
     QuoteComponent,
     QuoteCreateComponent,
     QuoteListComponent,
-    QuoteDetailComponent
+    QuoteDetailComponent,
+    FinanceComponent,
+    ExpensesComponent
     
   ],
   imports: [
@@ -140,7 +144,7 @@ import { QuoteDetailComponent } from './supplychain/quote/quote-detail/quote-det
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

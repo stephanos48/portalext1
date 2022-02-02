@@ -12,6 +12,7 @@ namespace API.Entities
         public decimal Tariff { get; set; }
         public decimal TotalPrice { get; set; }
         public bool LatestQuote { get; set; }
+        public string Notes { get; set; }
 
         public int QuoteId { get; set; }
         public virtual Quote Quote { get; set; }

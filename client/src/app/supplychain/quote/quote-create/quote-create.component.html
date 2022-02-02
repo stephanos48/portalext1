@@ -1,11 +1,15 @@
 <form #createForm="ngForm" (ngSubmit)="create()">
-    <h2 class="text-center text-primary"> Create Quote</h2>
+    <h2 class="text-center text-primary">Create Quote</h2>
     <hr>
   
     <div class="form-group">
         <select name="supplierId" #SupplierId="ngModel" [(ngModel)]="model.supplierId" class="form-control">
           <option *ngFor="let supplier of supplierList" value="{{supplier.supplierId}}">{{supplier.supplierName}}</option>
         </select>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" name="quoteDate" [(ngModel)]="model.quoteDate" Placeholder="QuoteDate" bsDatepicker [bsConfig]="bsConfig">
     </div>
 
     <div class="form-group">
